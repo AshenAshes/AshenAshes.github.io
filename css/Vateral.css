@@ -905,7 +905,7 @@ p.no-result {
     width: auto;
     max-width:100%;
 }
-/*
+
 .post-page-content h1{
     font-size: 3.1rem;
 }
@@ -924,9 +924,10 @@ p.no-result {
 .post-page-content h6{
     font-size: 1.3rem;
 }
-*/
+
+/*
 .post-page-content h1{
-    font-size: 2.1rem;
+    font-size: 3.1rem;
 }
 .post-page-content h2{
     font-size: 1.9rem;
@@ -943,6 +944,7 @@ p.no-result {
 .post-page-content h6{
     font-size: 1.1rem;
 }
+*/
 .post-page-content  pre{
     margin: 0;
 }
@@ -971,7 +973,8 @@ blockquote{
 
     text-align: center;
 }
-.post-toc-btn>i{
+/*原先是 .post-toc-btn>i{   ???*/
+.post-toc-btn i{
     line-height: 48px;
 }
 .post-toc-none{
