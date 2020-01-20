@@ -120,63 +120,57 @@
 
 <div id="content-outer">
   <div id="content-inner">
-    <div id="tag">
-    <div id="recent-posts">
-  
-      <div class="recent-post-item lazy" style="background-color:#DDDDDD" data-original="/images/coverpic4.jpg">
-        <a class="recent-post-link" href="/1999/08/28/Neverland/">
-        <div class="post-hover">
-          <!--title-->
-          <p class="post-title"><a href="/1999/08/28/Neverland/">Neverland</a></p>
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:#DDDDDD;background-image:url(/images/coverpic5.jpg)">
+  <h2>孤独的Webgl之旅(一)</h2>
+    
+  <p>作者:Antirain &nbsp&nbsp 发布于:<time datetime="2020-01-20T10:58:52.000Z">
+          2020-01-20
+    </time>
+    <span id="busuanzi_container_page_uv" style="display:none">
+      本文总阅读量<span id="busuanzi_value_page_uv"></span>次
+    </span>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <blockquote>
+<p>在这悲哀的山巅，请用你的眼泪诅咒我、祝福我，不要温和地走入那个良夜。</p>
+</blockquote>
+<p>作为与<a href="https://github.com/AshenAshes/webgl-MidSummer_Night" target="_blank" rel="noopener">项目</a>一致的记录而存在。</p>
+<p>  </p>
+<h3 id="创建画布"><a class="markdownIt-Anchor" href="#创建画布"></a> 创建画布</h3>
+<p>我们用H5新引入的<code>&lt;canvas&gt;</code>标签作为绘图区域，它允许JavaScript动态绘制图形。由于canvas是透明的，在canvas间加入的信息只会在不支持Webgl的浏览器上显示，这可以作为错误提示。</p>
+<p>对canvas内容的操作与绘制将通过JavaScript代码来实现，我们可以用<code>&lt;script&gt;&lt;/script&gt;</code>标签引入对应的JS代码。</p>
+<p>用body标签指定JS程序的入口。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Draw a blue rectangle (canvas version)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"main()"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"example"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span></span><br><span class="line">      Please use a browser that supports "canvas"</span><br><span class="line">    <span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"DrawRectangle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  </div>
+  <!--评论块-->
+    
 
-          <!--date-->
-          
-            <p class="post-time">Antirain &nbsp &nbsp 发布于:<time datetime="1999-08-27T16:00:00.000Z">
-              1999-08-28
-            </time>
-            </p>
-          
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
 
-          <!--tags-->
 
-          标签:
-            
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/碎碎念/">碎碎念</a></li></ul>
-            
-          <!--分类-->
-
-          分类:
-            
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
-            
-
-          <!--excerpt-->
-          <div class="post-excerpt">
-            <p>
-              摘要：
-              
-                
-记录Blog创建以来的一些想法。
-
-  
-  
-2019.7.25
-  学期初因...
-              
-            </p>
-          </div>
-          <div class="post-more"><a href="/1999/08/28/Neverland/">全文阅读</a></div>
-        </div>
-        </a>
-      </div>
-  
-  <nav class="paging">
-    <span class="page-number current">1</span>
+  <!-- Next Nav -->
+    
+  <a href="/2019/05/20/hello-world/" id="post_nav-older" class="post-nav-content next-content">
+      Next: 《Hello World》
+  </a>
+    
 </nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建画布"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 创建画布</span></a></li></ol>
 </div>
-
-
-</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
   </div>
 </div>
 <div id="bottom-outer">
