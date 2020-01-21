@@ -85,7 +85,7 @@
 
 <ul class="dropdown-menu dropdown">
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2020/01/">January 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">May 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">August 1999<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2019/05/">May 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">August 1999<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -98,7 +98,7 @@
 
 <ul class="dropdown-menu dropdown">
     <li class="nav-dropdown-list">
-        <a class="category-link" href="/categories/学习/">学习<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/随笔/">随笔<span class="category-count">1</span></a>
+        <a class="category-link" href="/categories/随笔/">随笔<span class="category-count">1</span></a>
     </li>
 </ul>
 <!--tags-->
@@ -175,7 +175,8 @@
 <pre><code>修复了首页挂掉的busuanzi API。
 更换了各种图片，关闭了原有的评论，之后有空大概会换成valine。
 在每篇文章底下加了pre和next，顺便改了下h1-h6的字体大小。
-这个主题修了八百年的代码高亮终于修好了，这就是用冷门主题的代价吗？引入highlight.js包以后直接在footer.ejs最后加了。主题风格在加入的css里设置选择。原css与高亮存在冲突，注释掉了main.min.css里的pre&gt;code和.highlight的整个部分。(这个主题的CSS真是让人摸不着头脑)
+这个主题修了八百年的代码高亮终于修好了，这就是用冷门主题的代价吗？引入highlight.js包以后直接在layout.ejs最后加了。主题风格在加入的css里设置选择。原css与高亮存在冲突，修改了main.min.css里的pre&gt;code的颜色，注释掉了.highlight的整个部分。(这个主题的CSS真是让人摸不着头脑)
+高亮还存在bug，进入页面需要刷新一次才能正常显示高亮。(懒得管了，以后再说)
 ...
 </code></pre>
 <p>大抵是这些，之后若有对原主题的改动也会加在这里。</p>
