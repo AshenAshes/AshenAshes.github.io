@@ -238,7 +238,7 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
 <p>fillStyle可以理解为画笔颜色，这里用的是Alpha=1.0的蓝色。RGB的范围都是0-255，alpha的范围是0-1.0。</p>
 <p>关于WebGL的坐标系统，原点在屏幕左上角，x轴从左到右，y轴从上到下。fillRect方法前两个参数是矩形的左上角坐标，后两个参数对应矩形的x轴方向长度和y轴方向长度(即宽度和高度)。</p>
 <p>绘制效果如下图所示：</p>
-<p><img src="/article/WebGL(1)/1.png" alt="aa"></p>
+<p><img src="/article/webgl(1)/1.png" alt="aa"></p>
 <p>这只是一个尝试在canvas上绘制图形的过程，真正的WebGL编程远比这个繁琐。</p>
 <h3 id="着色器相关"><a class="markdownIt-Anchor" href="#着色器相关"></a> 着色器相关</h3>
 <hr>
@@ -249,7 +249,7 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
 <h4 id="着色器"><a class="markdownIt-Anchor" href="#着色器"></a> 着色器</h4>
 <p>着色器是WebGL最重要的概念之一，绘图过程必须用到着色器。WebGL需要两种着色器——顶点着色器(Vertex Shader)和片元着色器(Fragment Shader)，用GLSL语言编写。</p>
 <p>顶点着色器是用来描述顶点特性(如位置、颜色等)的程序。片元着色器进行逐片元处理过程(如光照)。绘图的过程是，浏览器执行JS程序——JS执行WebGL相关方法——顶点着色器逐顶点操作，片元着色器逐片元操作——渲染到颜色缓冲区——显示在浏览器上。</p>
-<p><img src="/article/WebGL(1)/2.png" alt></p>
+<p><img src="/article/webgl(1)/2.png" alt></p>
 <p>不过虽然着色器代码是用GLSL语言编写的，创建着色器对象的过程中，程序接收的必须是字符串类型的对象，下面将介绍三种在JS代码中插入GLSL代码并创建着色器的方式。</p>
 <p> </p>
 <h4 id="用字符串存储着色器"><a class="markdownIt-Anchor" href="#用字符串存储着色器"></a> 用字符串存储着色器</h4>
