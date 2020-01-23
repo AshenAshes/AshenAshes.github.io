@@ -85,7 +85,7 @@
 
 <ul class="dropdown-menu dropdown">
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2020/01/">January 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">May 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">August 1999<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2020/01/">January 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">May 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">August 1999<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -98,7 +98,7 @@
 
 <ul class="dropdown-menu dropdown">
     <li class="nav-dropdown-list">
-        <a class="category-link" href="/categories/学习/">学习<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/随笔/">随笔<span class="category-count">1</span></a>
+        <a class="category-link" href="/categories/学习/">学习<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/随笔/">随笔<span class="category-count">1</span></a>
     </li>
 </ul>
 <!--tags-->
@@ -420,6 +420,7 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
 }
 </code></pre>
 <p>类似于顶点着色器，片元着色器的内置变量是gl_FragColor。这个四维向量代表RGBA值，范围不同于之前用过的，WebGL遵循了Opengl颜色分量的取值范围，所以四个参数范围在这里都是0.0-1.0。</p>
+<p> </p>
 <h4 id="清空绘图区"><a class="markdownIt-Anchor" href="#清空绘图区"></a> 清空绘图区</h4>
 <p>进行绘制前，我们首先要清空一次颜色缓冲区。首先指定清空缓冲区的背景颜色，然后清空缓冲区。</p>
 <pre class="highlight"><code class="javascript">    <span class="hljs-comment">//指定清空颜色缓冲区的颜色</span>
@@ -440,7 +441,7 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
 <p>至此，就完成了一个点的绘制。效果如下(恶趣味的红配绿)：</p>
 <p><img src="/article/webgl(1)/4.png" alt></p>
 <p>本文的代码放在<a href="https://github.com/AshenAshes/WebGL-MidSummer_Night/tree/WebGL1" target="_blank" rel="noopener">github</a>。</p>
-<p>考虑的后续可能的一些骚操作，对initShaders()进行了一些改写，把绑定program提出来了(暂时影响不大，可以忽略)。</p>
+<p>考虑到后续可能的一些骚操作，对initShaders()进行了一些改写，把绑定program提出来了。</p>
 <p> </p>
 <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
 <hr>
@@ -453,6 +454,10 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
 </article>
 <nav class="post-nav">
   <!-- Prev Nav -->
+    
+  <a href="/2020/01/23/webgl(2)/" id="post_nav-newer" class="post-nav-content prev-content">
+      Prev: 《孤独的WebGL之旅(二) | 着色器》
+  </a>
     
 
 
