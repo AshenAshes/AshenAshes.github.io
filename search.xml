@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>孤独的WebGL之旅(三) | 响应函数</title>
+      <link href="/2020/01/23/webgl(3)/"/>
+      <url>/2020/01/23/webgl(3)/</url>
+      
+        <content type="html"><![CDATA[<p>动态绘制过程中不免会用到鼠标或键盘的响应函数。之后进入三维世界，我们将通过鼠标改变场景的视角，通过键盘实现在场景中的漫游。在这一章只是先介绍一下鼠标和键盘的响应函数，等我写到三维世界，再回过头来补充具体的漫游相关。</p><p> </p><h3 id="鼠标监听"><a class="markdownIt-Anchor" href="#鼠标监听"></a> 鼠标监听</h3><hr><p> </p><h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3><hr><p>[1] 《WebGL Programming Guide》Kouichi Matsuda, Rodger Lea</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WebGL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>孤独的WebGL之旅(二) | 着色器</title>
       <link href="/2020/01/23/webgl(2)/"/>
       <url>/2020/01/23/webgl(2)/</url>
