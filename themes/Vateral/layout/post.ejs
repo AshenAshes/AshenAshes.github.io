@@ -1,0 +1,73 @@
+<article id="post">
+  <div class="post-page-title" <% if(!page.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-color:<%= theme.blendent.main %>;background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-color:<%= theme.blendent.main %>;background-image:url(<%= page.thumbnail%>)" <% } %>>
+  <h2><%=page.title%></h2>
+    <% if (page.date) { %>
+  <p>作者:<%=config.author%> &nbsp;&nbsp; 发布于:<time datetime="<%=page.date.toJSON()%>">
+          <%=date(page.date)%>
+    </time>
+    <span id="busuanzi_container_page_pv" style="display:none">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  </p>
+    <% } %>
+  </div>
+  <div class="post-page-content">
+  <%-page.content%>
+  </div>
+  <!--评论块-->
+    <% if(theme.comment.use){%>
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="<%=theme.comment.shortname%>"><button style="margin: 0 auto;background-color:<%= theme.blendent.main %> " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
+
+  <script>
+
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+      function disqus() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'),v = d.createElement('script'),disquUrl=document.getElementById("disqus_thread").dataset.diaque;
+          v.id = 'dsq-count-scr'
+          v.src= '//'+disquUrl+'/count.js';
+          s.src = 'https://'+disquUrl+'/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(v);
+          (d.head || d.body).appendChild(s);
+      }
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <%}%>
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    <% if (page.prev) { %>
+  <a href="<%- config.root %><%- page.prev.path %>" id="post_nav-newer" class="post-nav-content prev-content">
+      Prev: 《<%=page.prev.title%>》
+  </a>
+    <% } %>
+
+
+  <!-- Next Nav -->
+    <% if (page.next) { %>
+  <a href="<%- config.root %><%- page.next.path %>" id="post_nav-older" class="post-nav-content next-content">
+      Next: 《<%=page.next.title%>》
+  </a>
+    <% } %>
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <%- toc(page.content, {
+      class: 'post-toc',
+      list_number: true
+    }) %>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
