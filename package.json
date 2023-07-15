@@ -20,7 +20,8 @@
     "hexo-renderer-markdown-it-plus": "^1.0.6",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.3",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "kind-of":"^6.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
