@@ -237,9 +237,9 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>photo</title>
+      <link href="/photo/index.html"/>
+      <url>/photo/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -248,9 +248,9 @@
     
     
     <entry>
-      <title>photo</title>
-      <link href="/photo/index.html"/>
-      <url>/photo/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
