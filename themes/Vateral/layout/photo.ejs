@@ -1,0 +1,84 @@
+<!-- Single Gallery Page -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href="/css/photo/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/css/photo/magnific-popup.css" rel="stylesheet">
+<link href="/css/photo/templatemo_style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    form {
+        float: left;
+        font-weight: 400;
+        max-width: 300px;
+        width: 100%;
+    }
+    #local-search-result li:first-child{
+        margin-top: 45px;
+    }
+    @media screen and (max-width: 980px){
+        form {
+
+        margin: 0 auto;
+    }}
+    .photo-box{
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    .loaded {
+        opacity: 1;
+    }
+    .img-small {
+        opacity: 0;
+        transition: opacity 1s linear;
+    }
+    content img {
+        width: 100%;
+    }
+</style>
+<div class="main-container" id="photo">
+    <nav class="main-nav" style="background-color: white;border-bottom: #DDDDDD 1px solid;box-shadow: none;height: 104px">
+        <div id="logo" class="left" style="color: #707070">影集</div>
+    </nav>
+    <div class="content-container">
+        <header>
+            <h1 class="center-text"><%=theme.photo.name%></h1>
+            <h2 class="center-text"><%=theme.photo.about%></h2>
+        </header>
+        <div id="portfolio-content" class="center-text">
+            <div class="portfolio-page">
+                <% if (site.data.photo) { %>
+                    <% for (var i in site.data.photo) { %>
+                        <div class="portfolio-group photo-box" style="background-image: url(<%= site.data.photo[i].very_small_link %>);">
+                            <a class="portfolio-item placeholder" id="href"  href="<%= site.data.photo[i].large_link %>" >
+                                <img  class="img-small" src="<%= site.data.photo[i].small_link %>" alt="<%= site.data.photo[i].alt %>">
+                                <div class="detail photo-box"  >
+                                    <h3><%= i %></h3>
+                                    <p class="Model" style=" padding-top: 0;padding-bottom: 0;">相机：数据载入中...</p>
+                                    <p class="FocalLength" style=" padding-top: 0;padding-bottom: 0;">焦段：数据载入中...</p>
+                                    <p class="FNumber" style=" padding-top: 0;padding-bottom: 0;"> 光圈：数据载入中...</p>
+                                    <p class="ExposureTime" style=" padding-top: 0;padding-bottom: 0;">快门：数据载入中...</p>
+                                    <p class="ISOSpeedRatings" style=" padding-top: 0;padding-bottom: 0;">感光度：数据载入中...</p>
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/js/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/js/templatemo_script.js"></script>
+<script type="text/javascript" src="/js/exif.js"></script>
+<script type="text/javascript" src="/js/photopage.js"></script>
+<script type="text/javascript">
+    var boxes=$('.portfolio-item');
+    boxes.magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true
+        }
+    });
+</script>

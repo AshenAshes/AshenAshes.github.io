@@ -1,0 +1,22 @@
+
+<%
+var categoriesList = list_categories({ show_count: false }),
+  tagsList = list_tags({ show_count: false }),
+  archivesList = list_archives({ show_count: false });
+%>
+
+<div class="tags">
+  <% if (!is_year()) { %>
+    <div id="archive">
+        <% if (tagsList) { %>
+          <%-tagsList%>
+        <% } else { %>
+          <p>没有任何标签</p>
+        <% } %>
+    </div>
+  <% } else { %>
+</div>
+
+<%-partial('partials/recent-posts-noup')%>
+
+<% } %>

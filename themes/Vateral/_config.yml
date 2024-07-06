@@ -1,0 +1,91 @@
+# html lang
+language: en
+
+# seo优化
+seo:
+    keywords: "Antirain"
+    description: "Antirain's blog"
+
+# Miscelaneous
+favicon: /images/favicon2.ico
+
+# head-bg 头像背景图
+headbg: /images/15.jpg
+# header 头像图
+header: /images/header2.jpg
+
+# post-header 标语部分
+post_header:
+    img: /images/coverpic4.jpg
+    about:
+        - "虚途"
+    url: "https://ashenashes.github.io/1999/08/28/Neverland/"
+    visitor_front: "你是第"
+    visitor_back: "位访客"
+
+# 主配色
+blendent:
+    main: "#DDDDDD"
+
+#访客 开启即可显示全站访客计数统计
+visitor: true
+
+#博客时间统计
+time: false
+#博客开启的时间 格式为：月/日/年 几点:几分:几秒
+begin_time: 1/1/2017 00:00:00
+
+#链接
+sns:
+    github: "https://github.com/AshenAshes"
+    weibo: "http://example.com"
+    zhihu: "http://example.com"
+    twitter: "http://example.com"
+    email: "aluxes@foxmail.com"
+
+#默认thumbnail图片的数目
+thumbnail: 19
+
+#nav
+sidebar:
+    homepage:
+        use: true
+    archives:
+        use: true
+    categories:
+        use: true
+    tags:
+        use: true
+    about:
+        use: false
+    friends:
+        use: true
+    photo:
+        use: false
+
+# Reading experience
+reading:
+    entry_excerpt: 100
+
+#photo page
+photo:
+    name: "影集名称"
+    about: "一段简介"
+
+#评论
+comment:
+    use: false
+    shortname: XXX.disqus.com
+
+# stylesheets loaded in the <head>
+stylesheets:
+    - /css/materialize.min.css
+    - /css/main.min.css
+    - /css/prism.css
+
+# scripts loaded in the end of the body
+scripts:
+    - /js/jquery-3.1.1.min.js
+    - /js/materialize.min.js
+    - /js/main.min.js
+    - /js/prism.js

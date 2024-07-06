@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="<%=config.language%>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <% if(theme.visitor) { %>
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info" />
+    <% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <% if (theme.seo.keywords && theme.seo.description){%>
+    <meta name="keywords" content="<%=theme.seo.keywords%>" />
+    <meta name="description" content="<%=theme.seo.description%>" />
+    <% }%>
+    <title><%=config.title%></title>
+    <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+    <!-- stylesheets list from config.yml -->
+    <% theme.stylesheets.forEach(function(url) { %>
+    <link rel="stylesheet" href="<%=url%>" />
+    <% }); %> <% } %>
+    <style type="text/css">
+      html {
+        font-family: sans-serif;
+        font-weight: 300;
+      }
+      @font-face {
+        font-family: "Material Icons";
+        font-style: normal;
+        font-weight: 400;
+        src: url(<%=config.root%>fonts/MaterialIcons-Regular.eot);
+        src: url(<%=config.root%>fonts/MaterialIcons-Regular.woff2) format("woff2"), url(<%=config.root%>fonts/MaterialIcons-Regular.woff) format("woff"), url(<%=config.root%>fonts/MaterialIcons-Regular.ttf) format("truetype");
+      }
+    </style>
+    <link rel="shortcut icon" href="<%=theme.favicon%>" />
+  </head>
+  <body>
+    <div id="menu-box">
+      <a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu"><span class="nav-btn"></span></a>
+    </div>
+    <div id="menu-outer">
+      <div id="menu-inner"><%-partial('partials/nav-left')%></div>
+    </div>
+
+    <div id="content-outer">
+      <div id="content-inner"><%- body %></div>
+    </div>
+    <div id="bottom-outer">
+      <div id="bottom-inner"><%-partial('partials/footer')%></div>
+    </div>
+
+    <!--影集界面需要的资源-->
+    <% if(page.layout === 'photo') { %> <% }%> <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+    <!-- scripts list from theme config.yml -->
+    <% theme.scripts.forEach(function(url) { %>
+    <script src="<%=url%>"></script>
+    <% }); %> <% } %>
+    <script>
+      NProgress.start();
+      NProgress.done();
+      lazy();
+      links();
+      window.onpopstate = menu();
+      //pjax操作
+      $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
+      $(document)
+        .on("pjax:start", NProgress.start)
+        .on("pjax:end", NProgress.done)
+        .on("pjax:end", () => {
+          dowmdiv();
+          lazy();
+          toc();
+          links();
+          menu();
+        });
+    </script>
+  </body>
+</html>
