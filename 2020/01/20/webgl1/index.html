@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    
+    <meta name="keywords" content="Antirain" />
+    <meta name="description" content="Antirain&#39;s blog" />
+    
+    <title>Antirain</title>
+    
+    <!-- stylesheets list from config.yml -->
+    
+    <link rel="stylesheet" href="/css/materialize.min.css" />
+    
+    <link rel="stylesheet" href="/css/main.min.css" />
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+     
+    <style type="text/css">
+      html {
+        font-family: sans-serif;
+        font-weight: 300;
+      }
+      @font-face {
+        font-family: "Material Icons";
+        font-style: normal;
+        font-weight: 400;
+        src: url(/fonts/MaterialIcons-Regular.eot);
+        src: url(/fonts/MaterialIcons-Regular.woff2) format("woff2"), url(/fonts/MaterialIcons-Regular.woff) format("woff"), url(/fonts/MaterialIcons-Regular.ttf) format("truetype");
+      }
+    </style>
+    <link rel="shortcut icon" href="/images/favicon2.ico" />
+  <meta name="generator" content="Hexo 7.3.0"></head>
+  <body>
+    <div id="menu-box">
+      <a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu"><span class="nav-btn"></span></a>
+    </div>
+    <div id="menu-outer">
+      <div id="menu-inner"><ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/15.jpg);background-color:#DDDDDD">
+    <div class="header-box"><img src="/images/header2.jpg" ondragstart="return false;"></div>
+    <p color=black>Antirain</p> 
+    <div class="nav-link">
+        
+        <a  href="https://github.com/AshenAshes" target="_blank"><div class="link-box github"></div></a>
+         
+        
+        <a href="mailto:aluxes@foxmail.com"><div class="link-box email"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2020/07/">July 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">February 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">January 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">May 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">August 1999<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习<span class="category-count">5</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔<span class="category-count">2</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+
+</ul>
+</div>
+    </div>
+
+    <div id="content-outer">
+      <div id="content-inner"><article id="post">
+  <div class="post-page-title" style="background-color:#DDDDDD;background-image:url(/images/coverpic5.jpg)" >
+    <h2>孤独的WebGL之旅(一) | Hello, WebGL.</h2>
+    
+    <p>
+      作者:Antirain 发布于:<time datetime="2020-01-20T10:58:52.000Z"> 2020-01-20 </time> 更新于:<time datetime="2024-07-06T13:22:44.069Z"> 2024-07-06 </time>
+      <span id="busuanzi_container_page_pv" style="display: none"> 本文总阅读量<span id="busuanzi_value_page_pv"></span>次 </span>
+    </p>
+    
+  </div>
+  <div class="post-page-content"><blockquote>
+<p>在这悲哀的山巅，请用你的眼泪诅咒我、祝福我，不要温和地走入那个良夜。</p>
+</blockquote>
+<span id="more"></span>
+<p>作为与<a target="_blank" rel="noopener" href="https://github.com/AshenAshes/WebGL-MidSummer_Night">项目</a>一致的记录而存在。</p>
+<p>是对曾经没有时间完善的WebGL项目的追溯，也是一个重新学习原生WebGL的过程。</p>
+<p>  </p>
+<h2 id="创建与设置画布">创建与设置画布</h2>
+<p>我们用H5新引入的<code>&lt;canvas&gt;</code>标签作为绘图区域，它允许JavaScript动态绘制图形。由于canvas是透明的，在canvas间加入的信息只会在不支持WebGL的浏览器上显示，这可以作为错误提示。</p>
+<p>对canvas内容的操作与绘制将通过JavaScript代码来实现，我们可以用<code>&lt;script&gt;&lt;/script&gt;</code>标签引入对应的JS代码。</p>
+<p>用body标签指定JS程序的入口。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- index.html --></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>WebGL<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./lib/jquery-3.3.1.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./css/style.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- &lt;script type="text/javascript" src="./js/windowResize.js">&lt;/script> --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token special-attr"><span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>canvas<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Please use a browser that supports "canvas"
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./js/draw.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> </p>
+<p>我们预想的canvas应该自适应撑满整个屏幕，曾经在写类似前端需求时碰到过一个问题，就是会有高度上的滚动条出现，为了解决这个问题，抄了一些网上的css，使canvas的宽度和高度都可以适应全屏幕。对了，为了代码的可阅读性，html文件在根目录，其他所有的css,js,之后的着色器、model等都将独立设置子目录。</p>
+<p>css代码如下：</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* style.css */</span>
+<span class="token selector">html,body,canvas</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> Monospace<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">*</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">canvas</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> </p>
+<p>加入这段代码后，你会发现body所在的区域全都变成黑色了，并且没有滚动条出现。但当用F12开发者工具观察时，你会发现canvas所在区域的高度并没有占满整个屏幕。这时候我们需要用到JQuery来动态设置canvas的高度。注意，使用JQuery要引入JQuery文件，我把它放在了/lib文件夹里。</p>
+<p>你可以选择监听窗口的大小变化然后实时刷新canvas的size，注意每次刷新后都会丢失canvas的内容，需要重新绘制。注释掉的windowResize.js即为动态刷新的代码，如下所示：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//windowResize.js</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>resizeCanvas<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">resizeCanvas</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">resizeCanvas</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"canvas"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"width"</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"canvas"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"height"</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> </p>
+<p>不过我暂时没有想好把canvas和window一起重绘的代码放在哪里，所以这里我采用了只在window初始化的时候确定canvas的size，所以这段代码被放在了main的初始化阶段。和绘制的代码放在一起，便于我观察测试：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//draw.js</span>
+<span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>canvas<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Failed to get the &lt;canvas> element'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">//自适应一开始的页面大小</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"canvas"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"width"</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"canvas"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"height"</span><span class="token punctuation">,</span> <span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> context <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  context<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">'rgba(0, 0, 255, 1.0)'</span><span class="token punctuation">;</span>
+  context<span class="token punctuation">.</span><span class="token function">fillRect</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p> </p>
+<h2 id="尝试绘制">尝试绘制</h2>
+<p>绘制主要通过js进行，代码已经在上面的draw.js里了。我们首先通过id获取canvas对象，但绘制并不是直接通过canvas对象进行的，而是由canvas提供的上下文对象(context)来进行的。getContext参数指定了绘制对象的类型是2d还是3d，这里我们测试画的是一个矩形，所以是2d对象。</p>
+<p>fillStyle可以理解为画笔颜色，这里用的是Alpha=1.0的蓝色。RGB的范围都是0-255，alpha的范围是0-1.0。</p>
+<p>关于WebGL的坐标系统，原点在屏幕左上角，x轴从左到右，y轴从上到下。fillRect方法前两个参数是矩形的左上角坐标，后两个参数对应矩形的x轴方向长度和y轴方向长度(即宽度和高度)。</p>
+<p>绘制效果如下图所示：</p>
+<p><img src="/2020/01/20/webgl1/1720266182444.png" alt=""></p>
+<p>这只是一个尝试在canvas上绘制图形的过程，真正的WebGL编程远比这个繁琐。</p>
+<h2 id="着色器相关">着色器相关</h2>
+<h3 id="函数库">函数库</h3>
+<p>注意，从这里开始我们将引入参考资料里的一些程序，这些程序大都是一些事先定义好的函数库，方便我们获取一些对象，隐去不同浏览器之间的差异，但是我们的主要编程部分仍然是遵循原生WebGL的主旨。</p>
+<p>同时，为了避免以后不同函数库之间命名冲突的问题(曾经给我的CG大程造成了很大的麻烦)，我将建立自己的函数库，大致考虑分为两个，一个是WebGL-utils.js，注重于WebGL方面的初始化过程，另一个是math-utils.js，注重矩阵计算方面。有一个叫WebGL-debug.js的东西是用来显示debug信息的，这个是从参考资料代码里照搬的。</p>
+<p> </p>
+<h3 id="着色器">着色器</h3>
+<p>着色器是WebGL最重要的概念之一，绘图过程必须用到着色器。WebGL需要两种着色器——顶点着色器(Vertex Shader)和片元着色器(Fragment Shader)，用GLSL语言编写。</p>
+<p>顶点着色器是用来描述顶点特性(如位置、颜色等)的程序。片元着色器进行逐片元处理过程(如光照)。绘图的过程是，浏览器执行JS程序——JS执行WebGL相关方法——顶点着色器逐顶点操作，片元着色器逐片元操作——渲染到颜色缓冲区——显示在浏览器上。</p>
+<p><img src="/2020/01/20/webgl1/1720266199134.png" alt=""></p>
+<p>不过虽然着色器代码是用GLSL语言编写的，创建着色器对象的过程中，程序接收的必须是字符串类型的对象，下面将介绍三种在JS代码中插入GLSL代码并创建着色器的方式。</p>
+<p> </p>
+<h3 id="用字符串存储着色器">用字符串存储着色器</h3>
+<p>在参考资料书中，用到的都是这一种。直接在js代码内用字符串变量存储GLSL代码。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// Vertex shader program</span>
+<span class="token keyword">var</span> <span class="token constant">VSHADER_SOURCE</span> <span class="token operator">=</span> 
+  <span class="token string">'void main() &#123;\n'</span> <span class="token operator">+</span>
+  <span class="token string">'  gl_Position = vec4(0.0, 0.0, 0.0, 1.0);\n'</span> <span class="token operator">+</span> <span class="token comment">// Set the vertex coordinates of the point</span>
+  <span class="token string">'  gl_PointSize = 10.0;\n'</span> <span class="token operator">+</span>                    <span class="token comment">// Set the point size</span>
+  <span class="token string">'&#125;\n'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Fragment shader program</span>
+<span class="token keyword">var</span> <span class="token constant">FSHADER_SOURCE</span> <span class="token operator">=</span>
+  <span class="token string">'void main() &#123;\n'</span> <span class="token operator">+</span>
+  <span class="token string">'  gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);\n'</span> <span class="token operator">+</span> <span class="token comment">// Set the point color</span>
+  <span class="token string">'&#125;\n'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token operator">...</span>
+
+  <span class="token comment">// Initialize shaders</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">initShaders</span><span class="token punctuation">(</span>gl<span class="token punctuation">,</span> <span class="token constant">VSHADER_SOURCE</span><span class="token punctuation">,</span> <span class="token constant">FSHADER_SOURCE</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Failed to intialize shaders.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>initShader()函数是函数库WebGL-utils.js中的一个函数，如果你对WebGL如何创建着色器的过程不感兴趣，你可以直接调用这个函数，忽略内部细节。注意第二第三个参数必须为字符串。</p>
+<p>使用'\n'而不是直接用长字符串的原因是，这样做，当着色器内部出错时，就能获取出错的行号，对检查源代码错误很有帮助。</p>
+<p>这种方法只适用于简单程序，书写很麻烦，创建和维护难度大。</p>
+<p> </p>
+<h3 id="内嵌于html代码中">内嵌于html代码中</h3>
+<p>这种方法在网上的各种教程中很常见，通过设置<code>&lt;script&gt;</code>标签的type使得浏览器将内容视为数据块，不作为JS代码执行。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>vertex-shader<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x-shader/x-vertex<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    gl_Position <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//设置坐标</span>
+    gl_PointSize <span class="token operator">=</span> <span class="token number">10.0</span><span class="token punctuation">;</span>  <span class="token comment">//设置尺寸</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fragment-shader<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x-shader/x-fragment<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//设置颜色</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在JS代码中还要将标签内容转为字符串，具体代码可以参考以下(这里的代码其实包含了创建着色器的内部细节，如果不想关心，可以将initShaders函数放到函数库里，传给函数的第二三个参数是着色器代码所在script标签的id)：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>
+    program <span class="token operator">=</span> <span class="token function">initShaders</span><span class="token punctuation">(</span>gl<span class="token punctuation">,</span> <span class="token string">"vertex-shader"</span><span class="token punctuation">,</span> <span class="token string">"fragment-shader"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gl<span class="token punctuation">.</span><span class="token function">useProgram</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 启用该shader程序对象 </span>
+    <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">initShaders</span><span class="token punctuation">(</span> <span class="token parameter">gl<span class="token punctuation">,</span> vertexShaderId<span class="token punctuation">,</span> fragmentShaderId</span> <span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> vertShdr<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> fragShdr<span class="token punctuation">;</span>
+
+    <span class="token keyword">var</span> vertElem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span> vertexShaderId <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>vertElem <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+        <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Unable to load vertex shader "</span> <span class="token operator">+</span> vertexShaderId <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        vertShdr <span class="token operator">=</span> gl<span class="token punctuation">.</span><span class="token function">createShader</span><span class="token punctuation">(</span> gl<span class="token punctuation">.</span><span class="token constant">VERTEX_SHADER</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        gl<span class="token punctuation">.</span><span class="token function">shaderSource</span><span class="token punctuation">(</span> vertShdr<span class="token punctuation">,</span> vertElem<span class="token punctuation">.</span>text <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        gl<span class="token punctuation">.</span><span class="token function">compileShader</span><span class="token punctuation">(</span> vertShdr <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>gl<span class="token punctuation">.</span><span class="token function">getShaderParameter</span><span class="token punctuation">(</span>vertShdr<span class="token punctuation">,</span> gl<span class="token punctuation">.</span><span class="token constant">COMPILE_STATUS</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">"Vertex shader failed to compile.  The error log is:"</span>
+          <span class="token operator">+</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> gl<span class="token punctuation">.</span><span class="token function">getShaderInfoLog</span><span class="token punctuation">(</span> vertShdr <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">var</span> fragElem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span> fragmentShaderId <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>fragElem <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+        <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Unable to load vertex shader "</span> <span class="token operator">+</span> fragmentShaderId <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        fragShdr <span class="token operator">=</span> gl<span class="token punctuation">.</span><span class="token function">createShader</span><span class="token punctuation">(</span> gl<span class="token punctuation">.</span><span class="token constant">FRAGMENT_SHADER</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        gl<span class="token punctuation">.</span><span class="token function">shaderSource</span><span class="token punctuation">(</span> fragShdr<span class="token punctuation">,</span> fragElem<span class="token punctuation">.</span>text <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        gl<span class="token punctuation">.</span><span class="token function">compileShader</span><span class="token punctuation">(</span> fragShdr <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>gl<span class="token punctuation">.</span><span class="token function">getShaderParameter</span><span class="token punctuation">(</span>fragShdr<span class="token punctuation">,</span> gl<span class="token punctuation">.</span><span class="token constant">COMPILE_STATUS</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">"Fragment shader failed to compile.  The error log is:"</span>
+          <span class="token operator">+</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> gl<span class="token punctuation">.</span><span class="token function">getShaderInfoLog</span><span class="token punctuation">(</span> fragShdr <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">var</span> program <span class="token operator">=</span> gl<span class="token punctuation">.</span><span class="token function">createProgram</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gl<span class="token punctuation">.</span><span class="token function">attachShader</span><span class="token punctuation">(</span> program<span class="token punctuation">,</span> vertShdr <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gl<span class="token punctuation">.</span><span class="token function">attachShader</span><span class="token punctuation">(</span> program<span class="token punctuation">,</span> fragShdr <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gl<span class="token punctuation">.</span><span class="token function">linkProgram</span><span class="token punctuation">(</span> program <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>gl<span class="token punctuation">.</span><span class="token function">getProgramParameter</span><span class="token punctuation">(</span>program<span class="token punctuation">,</span> gl<span class="token punctuation">.</span><span class="token constant">LINK_STATUS</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">"Shader program failed to link.  The error log is:"</span>
+            <span class="token operator">+</span> <span class="token string">"&lt;pre>"</span> <span class="token operator">+</span> gl<span class="token punctuation">.</span><span class="token function">getProgramInfoLog</span><span class="token punctuation">(</span> program <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&lt;/pre>"</span><span class="token punctuation">;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> program<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但我觉得把GLSL代码放在html里还是不好管理，html代码的可读性变差了，还是放在文件里容易维护，于是就有了第三个方法。</p>
+<p> </p>
+<h3 id="从文件加载着色器">从文件加载着色器</h3>
+<p>从文件加载着色器需要创建一个XMLHttpRequest对象request来加载指定文件，事实上后面我们加载model时也要用到类似方法。可以将加载着色器的过程视作一个资源加载的过程，甚至我是在获取canvas对象之前加载的，因为加载过程和绘图无关。</p>
+<p>fileName指定了文件加载的路径，记得采用相对路径。onLoadShaderFile是注册的事件响应函数，它将在文件加载完成时被调用。加载的着色器代码被作为字符串对象存储，当两者都加载完成时，回到main()函数进行下一步操作。</p>
+<p>关键代码如下：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">loadShaderFile</span><span class="token punctuation">(</span><span class="token parameter">fileName<span class="token punctuation">,</span> shader</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  request<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> request<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">404</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token function">onLoadShaderFile</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>responseText<span class="token punctuation">,</span> shader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  request<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span> fileName<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  request<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">onLoadShaderFile</span><span class="token punctuation">(</span><span class="token parameter">fileString<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token string">'VERTEX_SHADER'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token constant">VERTEX_SHADER</span> <span class="token operator">=</span> fileString<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"vertex shader:"</span> <span class="token operator">+</span> <span class="token constant">VERTEX_SHADER</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token string">'FRAGMENT_SHADER'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token constant">FRAGMENT_SHADER</span> <span class="token operator">=</span> fileString<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"vertex shader:"</span> <span class="token operator">+</span> <span class="token constant">FRAGMENT_SHADER</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> 
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token constant">VERTEX_SHADER</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">FRAGMENT_SHADER</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token constant">FLAG_SHADER_LOADED</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从文件加载意味着我们可以比较方便地管理多个着色器对象，这对WebGL高级编程或许有意义(我还没学到hhh)。</p>
+<p> <br>
+至此,我们了解了三种加载着色器的方式，但对着色器内部代码的意义，以及如何使用着色器进行绘制还没有涉及。下面将通过一个简单的程序来说明。</p>
+<p> </p>
+<h2 id="简单的WebGL程序">简单的WebGL程序</h2>
+<p>下面我们将绘制一个最简单的图形——一个位于原点的10个像素大的红色的点。实际效果中将为一个矩形，因为对WebGL来说绘制矩形比绘制圆更快。</p>
+<p> </p>
+<h3 id="顶点着色器">顶点着色器</h3>
+<p>顶点着色器定义了点的相关性质，在这里我们定义了点的位置和大小：</p>
+<pre class="line-numbers language-glsl" data-language="glsl"><code class="language-glsl"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  gl_Position <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//设置坐标</span>
+  gl_PointSize <span class="token operator">=</span> <span class="token number">10.0</span><span class="token punctuation">;</span>  <span class="token comment">//设置尺寸</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>gl_Position和gl_PointSize是顶点着色器内置的变量，你必须传值给这两个变量。不同于JS，GLSL是一种强类型的语言，gl_Position的类型是vec4，相当于长度为4的矢量，每个值的类型都是float。它表示顶点的齐次坐标。gl_PointSize的类型也是float，所以这里的10.0不能写成10。vec4是GLSL内置的构造函数，在JS里，通过math-utils.js的函数库，我们也创建了类似的一连串的vec2,vec3,vec4的构造函数。</p>
+<p> </p>
+<h3 id="WebGL坐标系">WebGL坐标系</h3>
+<p>与canvas坐标系不同，WebGL坐标系的原点在canvas正中间，且是一个三维坐标系，具有x轴(从左往右)，y轴(从下往上)，z轴(从屏幕里往屏幕外)。x,y的坐标范围均为-1.0-1.0。在涉及深度之前，暂不讨论z轴，只把它定为0.0。</p>
+<p> </p>
+<h3 id="片元着色器">片元着色器</h3>
+<p>片元着色器里，我们定义了该点的颜色：</p>
+<pre class="line-numbers language-glsl" data-language="glsl"><code class="language-glsl"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//设置颜色</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>类似于顶点着色器，片元着色器的内置变量是gl_FragColor。这个四维向量代表RGBA值，范围不同于之前用过的，WebGL遵循了Opengl颜色分量的取值范围，所以四个参数范围在这里都是0.0-1.0。</p>
+<p> </p>
+<h3 id="清空绘图区">清空绘图区</h3>
+<p>进行绘制前，我们首先要清空一次颜色缓冲区。首先指定清空缓冲区的背景颜色，然后清空缓冲区。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//指定清空颜色缓冲区的颜色</span>
+gl<span class="token punctuation">.</span><span class="token function">clearColor</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//清空颜色缓冲区</span>
+gl<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span>gl<span class="token punctuation">.</span><span class="token constant">COLOR_BUFFER_BIT</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一旦指定了背景色，背景色就会驻存在WebGL系统中，在下一次调用gl.clearColor()方法前不会改变。</p>
+<p> </p>
+<h3 id="画一个点">画一个点</h3>
+<p>使用gl.drawArrays(mode, first, count)函数进行绘制。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//绘制一个点</span>
+gl<span class="token punctuation">.</span><span class="token function">drawArrays</span><span class="token punctuation">(</span>gl<span class="token punctuation">.</span><span class="token constant">POINTS</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>顶点着色器会被执行count次，随后每个顶点调用一次片元着色器。</p>
+<p>怎么用看这个:</p>
+<p><img src="/2020/01/20/webgl1/1720266250314.png" alt=""></p>
+<p>至此，就完成了一个点的绘制。效果如下(恶趣味的红配绿)：</p>
+<p><img src="/2020/01/20/webgl1/1720266261758.png" alt=""></p>
+<p>本文的代码放在<a target="_blank" rel="noopener" href="https://github.com/AshenAshes/WebGL-MidSummer_Night/tree/WebGL1">github</a>。</p>
+<p>考虑到后续可能的一些骚操作，对initShaders()进行了一些改写，把绑定program提出来了。</p>
+<p> </p>
+<h2 id="参考资料">参考资料</h2>
+<p>[1] 《WebGL Programming Guide》Kouichi Matsuda, Rodger Lea</p>
+</div>
+  <!--评论块-->
+  
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+  
+  <a href="/2020/01/23/webgl2/" id="post_nav-newer" class="post-nav-content prev-content"> Prev: 《孤独的WebGL之旅(二) | 着色器》 </a>
+  
+
+  <!-- Next Nav -->
+  
+  <a href="/2019/05/20/hello-world/" id="post_nav-older" class="post-nav-content next-content"> Next: 《Hello World》 </a>
+  
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%AE%BE%E7%BD%AE%E7%94%BB%E5%B8%83"><span class="post-toc-number">1.</span> <span class="post-toc-text">创建与设置画布</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B0%9D%E8%AF%95%E7%BB%98%E5%88%B6"><span class="post-toc-number">2.</span> <span class="post-toc-text">尝试绘制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9D%80%E8%89%B2%E5%99%A8%E7%9B%B8%E5%85%B3"><span class="post-toc-number">3.</span> <span class="post-toc-text">着色器相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E5%BA%93"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">函数库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%98%E5%82%A8%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">用字符串存储着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%85%E5%B5%8C%E4%BA%8Ehtml%E4%BB%A3%E7%A0%81%E4%B8%AD"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">内嵌于html代码中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">从文件加载着色器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84WebGL%E7%A8%8B%E5%BA%8F"><span class="post-toc-number">4.</span> <span class="post-toc-text">简单的WebGL程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%A1%B6%E7%82%B9%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">顶点着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WebGL%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">WebGL坐标系</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">片元着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B8%85%E7%A9%BA%E7%BB%98%E5%9B%BE%E5%8C%BA"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">清空绘图区</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%BB%E4%B8%80%E4%B8%AA%E7%82%B9"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">画一个点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考资料</span></a></li></ol></div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+  menu();
+</script>
+</div>
+    </div>
+    <div id="bottom-outer">
+      <div id="bottom-inner"><a id="top-button" onfocus="this.blur();"
+  ><div class="up upinbody" style="background-color: #DDDDDD"><i class="material-icons material-up">vertical_align_top</i></div></a
+>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+
+
+<p style="line-height: 45px">Copyright © 2017-2024 Antirain</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+</div>
+    </div>
+
+    <!--影集界面需要的资源-->
+     
+    <!-- scripts list from theme config.yml -->
+    
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    
+    <script src="/js/materialize.min.js"></script>
+    
+    <script src="/js/main.min.js"></script>
+    
+    <script src="/js/prism.js"></script>
+     
+    <script>
+      NProgress.start();
+      NProgress.done();
+      lazy();
+      links();
+      window.onpopstate = menu();
+      //pjax操作
+      $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
+      $(document)
+        .on("pjax:start", NProgress.start)
+        .on("pjax:end", NProgress.done)
+        .on("pjax:end", () => {
+          dowmdiv();
+          lazy();
+          toc();
+          links();
+          menu();
+        });
+    </script>
+  </body>
+</html>
