@@ -1,5 +1,5 @@
 # html lang
-language: en
+language: zh-CN
 
 # seo优化
 seo:
@@ -21,7 +21,7 @@ post_header:
         - "虚途"
     url: "https://ashenashes.github.io/1999/08/28/Neverland/"
     visitor_front: "你是第"
-    visitor_back: "位访客"
+    visitor_back: "位到来的人"
 
 # 主配色
 blendent:
@@ -33,7 +33,7 @@ visitor: true
 #博客时间统计
 time: false
 #博客开启的时间 格式为：月/日/年 几点:几分:几秒
-begin_time: 1/1/2017 00:00:00
+begin_time: 5/1/2017 00:00:00
 
 #链接
 sns:
@@ -74,8 +74,9 @@ photo:
 
 #评论
 comment:
-    use: false
-    shortname: XXX.disqus.com
+    use: true
+    appid:
+    apikey:
 
 # stylesheets loaded in the <head>
 stylesheets:
