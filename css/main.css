@@ -990,9 +990,13 @@ p.no-result {
     display: inline-block
 }
 
+.post-page-title p a {
+    color: #fff
+}
+
 .post-page-title h2 {
     margin: 0 0 0 20px;
-    bottom: 50px;
+    bottom: 100px;
     left: 0;
     font-size: 30px
 }
@@ -1019,32 +1023,44 @@ p.no-result {
 
 .post-page-content h1 {
     font-size: 2.1rem;
+    font-weight: bold;
     padding-bottom: .3em;
     line-height: 1.225;
     border-bottom: 1px solid #d0d7d3b3;
+    margin-top: 40px;
 }
 
 .post-page-content h2 {
     font-size: 1.9rem;
+    font-weight: bold;
     padding-bottom: .3em;
     line-height: 1.225;
     border-bottom: 1px solid #d0d7d3b3;
+    margin-top: 40px;
 }
 
 .post-page-content h3 {
-    font-size: 1.4rem
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 40px;
 }
 
 .post-page-content h4 {
-    font-size: 1.1rem
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 40px;
 }
 
 .post-page-content h5 {
-    font-size: 0.9rem
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 40px;
 }
 
 .post-page-content h6 {
-    font-size: 0.8rem
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 40px;
 }
 
 .post-page-content pre {
