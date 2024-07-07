@@ -1,6 +1,7 @@
 ---
 title: Software Security Note(1) | Buffer Overflow
 date: 2020-07-18 06:59:07
+updated: 2024-07-06
 categories: 学习
 tags: 
 - Security  
