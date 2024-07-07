@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     
     <link rel="dns-prefetch" href="https://busuanzi.ibruce.info" />
     
@@ -80,7 +81,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2024/07/">July 2024<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/07/">July 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">February 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">January 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">May 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">August 1999<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2024/07/">七月 2024<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/07/">七月 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">二月 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">一月 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">五月 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">八月 1999<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -129,6 +130,8 @@
       <p>
         作者:Aluxes 
         发布于:<time datetime="1999-08-27T16:00:00.000Z"> 1999-08-28 </time> 
+        
+          更新于:<time datetime="2024-07-05T16:00:00.000Z"> 2024-07-06 </time>
         
         <span id="busuanzi_container_page_pv" style="display: none"> 本文总阅读量<span id="busuanzi_value_page_pv"></span>次 </span>
          <br> 
@@ -200,8 +203,7 @@ markdown换了个渲染器，卸载hexo-renderer-marked换成hexo-renderer-markd
 </blockquote>
 <p>大抵是这些，之后若有对原主题的改动也会加在这里。</p>
 </div>
-  <!--评论块-->
-  
+
 </article>
 <nav class="post-nav">
   <!-- Prev Nav -->
@@ -212,6 +214,48 @@ markdown换了个渲染器，卸载hexo-renderer-marked换成hexo-renderer-markd
   <!-- Next Nav -->
   
 </nav>
+
+  <!--评论块-->
+  
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: "",
+            appKey: "",
+            avatar:'hide', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+            placeholder: '或许想说点什么吗',
+            // 设置Bilibili表情包地址
+            emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+            // 表情title和图片映射
+            emojiMaps: {
+              "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+              "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+              "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+              "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+              "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+              "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+              "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+              "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+              "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+              "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+              "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+              "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+              "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+              "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+              "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+              "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+              "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+              "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+              "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+              "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+              "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+              // ... 更多表情
+            } 
+        })
+    </script>
+  
+
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box"></div>

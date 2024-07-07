@@ -1165,6 +1165,19 @@ blockquote {
     float: right
 }
 
+#vcomments {
+    width: 900px;
+    padding: 30px;
+    margin: 150px auto 0;
+    text-align: center;
+    /* border-top: 0.5px solid silver; */
+    background-color: #ffffff;
+}
+
+#vcomments .vempty {
+    display: none !important;
+}
+
 pre {
     padding: 15px
 }
