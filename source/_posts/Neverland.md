@@ -1,7 +1,7 @@
 ---
 title: Neverland
 date: 1999-08-28 00:00:00
-updated: 2024-07-06
+updated: 2024-07-07
 categories: 随笔
 tags: 碎碎念
 thumbnail: /images/coverpic.jpg
@@ -84,5 +84,11 @@ thumbnail: /images/coverpic.jpg
 > markdown换了个渲染器，卸载hexo-renderer-marked换成hexo-renderer-markdown-it
 > 原先头痛的二级标题没下划线，其实在h2下面加一个html样式就解决了
 > 图片的引用改成了hexo本身支持的写法，直接放在post目录下对应title的文件夹里即可，但是title即文件名不能有特殊字符
+> ...
+> 2024.7.7 更新
+> 没想到吧这么快就回来了，那个不刷新的问题是那段pjax导致的，页面渲染时只刷新某个区域，感觉实在没有必要，毕竟我对性能没啥要求
+> 加上那个pjax以后很多地方的写法都会很奇怪，于是注释了，神清气爽
+> 评论valine也加了
+> 文章的刷新时间暂时解决方法是自己在post前面加updated字段，总感觉不太优雅，但是取文件创建时间又不靠谱，那还是靠自己吧
 
 大抵是这些，之后若有对原主题的改动也会加在这里。

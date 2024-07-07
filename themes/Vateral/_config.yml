@@ -75,8 +75,8 @@ photo:
 #评论
 comment:
     use: true
-    appid:
-    apikey:
+    appid: thYvkqNTRLSNl0dGT8PryTEu-gzGzoHsz
+    apikey: PQ7geFp2HbDoa7iI1WCEFyxj
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -90,3 +90,7 @@ scripts:
     - /js/materialize.min.js
     - /js/main.min.js
     - /js/prism.js
+
+search:
+    path: search.xml
+    field: all
