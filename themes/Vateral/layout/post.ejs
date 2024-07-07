@@ -3,11 +3,33 @@
     <%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-color:<%= theme.blendent.main %>;background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-color:<%= theme.blendent.main %>;background-image:url(<%= page.thumbnail%>)" <% } %>>
     <h2><%=page.title%></h2>
     <% if (page.date) { %>
-    <p>
-      作者:<%=config.author%> 发布于:<time datetime="<%=page.date.toJSON()%>"> <%=date(page.date)%> </time> 更新于:<time datetime="<%=page.updated.toJSON()%>"> <%=date(page.updated)%> </time>
-      <span id="busuanzi_container_page_pv" style="display: none"> 本文总阅读量<span id="busuanzi_value_page_pv"></span>次 </span>
-    </p>
+      <p>
+        作者:<%=config.author%> 发布于:<time datetime="<%=page.date.toJSON()%>"> <%=date(page.date)%> </time> 更新于:<time datetime="<%=page.updated.toJSON()%>"> <%=date(page.updated)%> </time>
+        <span id="busuanzi_container_page_pv" style="display: none"> 本文总阅读量<span id="busuanzi_value_page_pv"></span>次 </span>
+        <% if (page.tags||page.categories) {%> <br> <% } %>
+        <% if (page.tags && page.tags.length>0) {%>
+          标签:<%- list_tags(page.tags, {
+              show_count: false,
+              style: false ,
+              separator: ' | ',
+              transform(str) {
+                return titlecase(str);
+              }
+            }) %>
+        <% } %>
+        <% if (page.categories && page.categories.length>0) {%>
+          分类:<%- list_categories(page.categories, {
+              show_count: false,
+              style: false,
+              separator: ' | ',
+              transform(str) {
+                return titlecase(str);
+              }
+            }) %>
+        <% } %>
+        </p>
     <% } %>
+    
   </div>
   <div class="post-page-content"><%-page.content%></div>
   <!--评论块-->

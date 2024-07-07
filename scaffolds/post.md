@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+categories: 
 tags:
 thumbnail: /images/15.jpg
 ---

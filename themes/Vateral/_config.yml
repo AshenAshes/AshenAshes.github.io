@@ -4,19 +4,19 @@ language: en
 # seo优化
 seo:
     keywords: "Antirain"
-    description: "Antirain's blog"
+    description: "Aluxes's blog"
 
 # Miscelaneous
-favicon: /images/favicon2.ico
+favicon: /images/favicon0.ico
 
 # head-bg 头像背景图
-headbg: /images/15.jpg
+headbg: /images/21.jpg
 # header 头像图
-header: /images/header2.jpg
+header: /images/header.jpg
 
 # post-header 标语部分
 post_header:
-    img: /images/coverpic4.jpg
+    img: /images/coverpic.jpg
     about:
         - "虚途"
     url: "https://ashenashes.github.io/1999/08/28/Neverland/"

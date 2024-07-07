@@ -2378,12 +2378,12 @@ ul.category-list li {
     list-style-type: none
 } */
 
-ul:not(.lvl-0) {
+ul:not([class^="lvl-"]) {
     padding-left: 0;
     list-style-type: none
 }
 
-ul:not(.lvl-0) li {
+ul li:not([class*="lvl-"]) {
     list-style-type: none
 }
 

@@ -3,7 +3,7 @@ title: Neverland
 date: 1999-08-28 00:00:00
 categories: 随笔
 tags: 碎碎念
-thumbnail: /images/coverpic4.jpg
+thumbnail: /images/coverpic.jpg
 ---
 
 > 记录Blog创建以来的一些想法。
