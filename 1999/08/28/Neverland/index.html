@@ -131,7 +131,7 @@
         作者:Aluxes 
         发布于:<time datetime="1999-08-27T16:00:00.000Z"> 1999-08-28 </time> 
         
-          更新于:<time datetime="2024-07-05T16:00:00.000Z"> 2024-07-06 </time>
+          更新于:<time datetime="2024-07-06T16:00:00.000Z"> 2024-07-07 </time>
         
         <span id="busuanzi_container_page_pv" style="display: none"> 本文总阅读量<span id="busuanzi_value_page_pv"></span>次 </span>
          <br> 
@@ -199,7 +199,13 @@ prism可以到prismjs.com/download.html去下载，还可以配置各种插件�
 busuanzi的刷新还是有问题，暂时懒得解决了...<br>
 markdown换了个渲染器，卸载hexo-renderer-marked换成hexo-renderer-markdown-it<br>
 原先头痛的二级标题没下划线，其实在h2下面加一个html样式就解决了<br>
-图片的引用改成了hexo本身支持的写法，直接放在post目录下对应title的文件夹里即可，但是title即文件名不能有特殊字符</p>
+图片的引用改成了hexo本身支持的写法，直接放在post目录下对应title的文件夹里即可，但是title即文件名不能有特殊字符<br>
+...<br>
+2024.7.7 更新<br>
+没想到吧这么快就回来了，那个不刷新的问题是那段pjax导致的，页面渲染时只刷新某个区域，感觉实在没有必要，毕竟我对性能没啥要求<br>
+加上那个pjax以后很多地方的写法都会很奇怪，于是注释了，神清气爽<br>
+评论valine也加了<br>
+文章的刷新时间暂时解决方法是自己在post前面加updated字段，总感觉不太优雅，但是取文件创建时间又不靠谱，那还是靠自己吧</p>
 </blockquote>
 <p>大抵是这些，之后若有对原主题的改动也会加在这里。</p>
 </div>
@@ -221,10 +227,14 @@ markdown换了个渲染器，卸载hexo-renderer-marked换成hexo-renderer-markd
     <script>
         new Valine({
             el: '#vcomments',
-            appId: "",
-            appKey: "",
-            avatar:'hide', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
-            placeholder: '或许想说点什么吗',
+            appId: "thYvkqNTRLSNl0dGT8PryTEu-gzGzoHsz",
+            appKey: "PQ7geFp2HbDoa7iI1WCEFyxj",
+            avatar:'identicon', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+            placeholder: ' \
+            这个世界拥有她，但不了解她\n \
+            而我，我了解她\n \
+            我要留在世上\n \
+            为她哀鸣。',
             // 设置Bilibili表情包地址
             emojiCDN: '//i0.hdslb.com/bfs/emote/', 
             // 表情title和图片映射
@@ -300,7 +310,7 @@ markdown换了个渲染器，卸载hexo-renderer-marked换成hexo-renderer-markd
       links();
       window.onpopstate = menu();
       //pjax操作
-      $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
+      // $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
       $(document)
         .on("pjax:start", NProgress.start)
         .on("pjax:end", NProgress.done)

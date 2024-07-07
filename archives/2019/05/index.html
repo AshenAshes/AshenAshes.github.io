@@ -217,7 +217,7 @@
       links();
       window.onpopstate = menu();
       //pjax操作
-      $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
+      // $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
       $(document)
         .on("pjax:start", NProgress.start)
         .on("pjax:end", NProgress.done)

@@ -176,10 +176,14 @@ canvas<span class="token punctuation">.</span><span class="token function-variab
     <script>
         new Valine({
             el: '#vcomments',
-            appId: "",
-            appKey: "",
-            avatar:'hide', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
-            placeholder: '或许想说点什么吗',
+            appId: "thYvkqNTRLSNl0dGT8PryTEu-gzGzoHsz",
+            appKey: "PQ7geFp2HbDoa7iI1WCEFyxj",
+            avatar:'identicon', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+            placeholder: ' \
+            这个世界拥有她，但不了解她\n \
+            而我，我了解她\n \
+            我要留在世上\n \
+            为她哀鸣。',
             // 设置Bilibili表情包地址
             emojiCDN: '//i0.hdslb.com/bfs/emote/', 
             // 表情title和图片映射
@@ -255,7 +259,7 @@ canvas<span class="token punctuation">.</span><span class="token function-variab
       links();
       window.onpopstate = menu();
       //pjax操作
-      $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
+      // $(document).pjax("a:not(.nopjax)", "#content-inner", { fragment: "#content-inner", timeout: 8000 });
       $(document)
         .on("pjax:start", NProgress.start)
         .on("pjax:end", NProgress.done)
