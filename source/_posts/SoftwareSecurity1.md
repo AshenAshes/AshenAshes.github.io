@@ -23,6 +23,8 @@ thumbnail: /images/security1.jpg
 
 这个[github](https://github.com/AshenAshes/Software-Security)是和这个项目一起的。
 
+**注意：当时的程序大多是32位的，用的python也是python2的写法，在python3里这么写会报错**
+
 ## 概念
 
 Buffer Overflow，即缓冲区溢出。在存在缓存溢出安全漏洞的计算机中，攻击者可以用超出常规长度的字符数来填满一个域，通常是内存区地址。在某些情况下，这些过量的字符能够作为“可执行”代码来运行。从而使得攻击者可以不受安全措施的约束来控制被攻击的计算机。
@@ -113,10 +115,16 @@ int main(){
 ```
 
 main调用函数func时，栈会为此次函数调用在栈顶分配一块内存，依次压入：
-- Arguments 参数，从右往左 
+- Arguments 参数，从右往左 （32位和64位这里有点不一样，见下方说明）
 - Return address 函数的返回地址，即该函数执行完成后要执行的下一条指令的地址 
 - Previous frame pointer(ebp) 上一个stack frame(栈帧)的帧指针 
 - Local varibles 函数内的一些局部变量 
+
+>x86
+函数参数在函数返回地址的上方
+x64
+System V AMD64 ABI (Linux、FreeBSD、macOS 等采用) 中前六个整型或指针参数依次保存在 RDI, RSI, RDX, RCX, R8 和 R9 寄存器中，如果还有更多的参数的话才会保存在栈上。
+内存地址不能大于 0x00007FFFFFFFFFFF，6 个字节长度，否则会抛出异常。
 
 如下图所示：
 
@@ -156,8 +164,8 @@ Push pop
 #### call指令
 
 包含两步操作：
-1) push $eip, 相当于push了return address
-2) 跳转到func的地址，即标号地址
+1) push $eip, $eip存储的是当前下一条指令的地址，可以理解为PC寄存器，相当于push了return address
+2) jmp xxx，跳转到func的地址，即标号地址
  
 #### leave指令
 
@@ -167,7 +175,7 @@ Push pop
  
 #### ret指令
 
-就是pop $eip的操作，结束函数，根据return address返回
+就是pop $eip的操作，把之前存储的上一个函数要执行的指令地址给PC寄存器，结束函数，根据return address返回
  
 ## 攻击原理
 
@@ -432,12 +440,12 @@ io.interactive()
 
 ## 防御手段
 ### Canary
-在ebp下面放一个字作为canary,在程序调用结束之前(leave ret之前), 检查栈上的canary与寄存器中的canary是否相等，若不相等则调用中断程序。
+在ebp和return address中间放一个字作为canary,在程序调用结束之前(leave ret之前), 检查栈上的canary与寄存器中的canary是否相等，若不相等则调用中断程序。
 
 攻击方式：printf格式化字符串漏洞攻击拉出canary。
 
 ### DEP(NX)
-指定内存要么为RX(可读可执行)，要么为RW(可读可写)。
+基本原理是将数据所在内存页标识为不可执行。指定内存要么为RX(可读可执行)，要么为RW(可读可写)。栈和bss段只有读写权限。
 
 攻击方式：Code reuse attack, e.g., ret2libc
 

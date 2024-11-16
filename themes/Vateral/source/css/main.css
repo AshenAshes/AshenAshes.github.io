@@ -25,7 +25,7 @@ body {
 .ol,
 .post-toc,
 .post-toc-child {
-    list-style: none
+    list-style: none;
 }
 
 .material-icons {
@@ -1052,13 +1052,13 @@ p.no-result {
 }
 
 .post-page-content h5 {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-top: 40px;
 }
 
 .post-page-content h6 {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-top: 40px;
 }
@@ -1092,9 +1092,16 @@ blockquote {
 .post-toc-none {
     top: 70px;
     right: 30px;
+    max-height: 90%;
     background-color: #fff;
     box-shadow: 0 0 3px rgba(158, 158, 158, .69);
-    position: fixed
+    position: fixed;
+    /* 隐藏滚动条 */
+    overflow: auto;
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
 }
 
 .post-toc-btn > i {
@@ -1121,7 +1128,7 @@ blockquote {
 .post-toc {
     display: inline-block;
     max-width: 400px;
-    padding: 10px
+    padding: 20px
 }
 
 .post-toc-child {

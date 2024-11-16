@@ -59,6 +59,7 @@
             appId: "<%-theme.comment.appid%>",
             appKey: "<%-theme.comment.apikey%>",
             avatar:'identicon', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+            meta: ['nick','mail'],
             placeholder: ' \
             这个世界拥有她，但不了解她\n \
             而我，我了解她\n \
@@ -97,7 +98,7 @@
 
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
-<div class="post-toc-box"><%- toc(page.content, { class: 'post-toc', list_number: true }) %></div>
+<div class="post-toc-box"><%- toc(page.content, { class: 'post-toc', list_number: false, max_depth:5 }) %></div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
   menu();

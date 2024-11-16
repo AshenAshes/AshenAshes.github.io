@@ -72,7 +72,7 @@ photo:
     name: "影集名称"
     about: "一段简介"
 
-#评论
+#valine comment
 comment:
     use: true
     appid: thYvkqNTRLSNl0dGT8PryTEu-gzGzoHsz
@@ -81,14 +81,16 @@ comment:
 # stylesheets loaded in the <head>
 stylesheets:
     - /css/materialize.min.css
-    - /css/main.min.css
+    # - /css/main.min.css
+    - /css/main.css
     - /css/prism.css
 
 # scripts loaded in the end of the body
 scripts:
     - /js/jquery-3.1.1.min.js
     - /js/materialize.min.js
-    - /js/main.min.js
+    # - /js/main.min.js
+    - /js/main.js
     - /js/prism.js
 
 search:
