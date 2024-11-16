@@ -18,7 +18,7 @@
     
     <link rel="stylesheet" href="/css/materialize.min.css" />
     
-    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
     
     <link rel="stylesheet" href="/css/prism.css" />
      
@@ -81,7 +81,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2024/07/">七月 2024<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/07/">七月 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">二月 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">一月 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">五月 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">八月 1999<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2024/07/">七月 2024<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/07/">七月 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">二月 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">一月 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">五月 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2012/08/">八月 2012<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">八月 1999<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -94,7 +94,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习<span class="category-count">6</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔<span class="category-count">2</span></a>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习<span class="category-count">6</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔<span class="category-count">3</span></a>
     </li>
 </ul>
 <!--tags-->
@@ -154,6 +154,7 @@
 <p>以下是原文的引言：</p>
 <p>是对这学期上的Software Security课程的一个整理，讲道理上课的时候听的不是很认真，但是感觉这门课还是很值得复盘整理一下的，于是写了这个系列的note，希望我能早点更完。一些依托于助教的虚拟机的服务器端的HW就没法复现了，可惜。</p>
 <p>这个<a target="_blank" rel="noopener" href="https://github.com/AshenAshes/Software-Security">github</a>是和这个项目一起的。</p>
+<p><strong>注意：当时的程序大多是32位的，用的python也是python2的写法，在python3里这么写会报错</strong></p>
 <h2 id="概念">概念</h2>
 <p>Buffer Overflow，即缓冲区溢出。在存在缓存溢出安全漏洞的计算机中，攻击者可以用超出常规长度的字符数来填满一个域，通常是内存区地址。在某些情况下，这些过量的字符能够作为“可执行”代码来运行。从而使得攻击者可以不受安全措施的约束来控制被攻击的计算机。</p>
 <p>C语言中存在很多有安全漏洞的库函数，由于不进行边界检查，存在着buffer overflow的风险：</p>
@@ -223,7 +224,7 @@
 <p>main调用函数func时，栈会为此次函数调用在栈顶分配一块内存，依次压入：</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>Arguments 参数，从右往左</p>
+<p>Arguments 参数，从右往左 （32位和64位这里有点不一样，见下方说明）</p>
 </li>
 <li class="lvl-2">
 <p>Return address 函数的返回地址，即该函数执行完成后要执行的下一条指令的地址</p>
@@ -235,6 +236,13 @@
 <p>Local varibles 函数内的一些局部变量</p>
 </li>
 </ul>
+<blockquote>
+<p>x86<br>
+函数参数在函数返回地址的上方<br>
+x64<br>
+System V AMD64 ABI (Linux、FreeBSD、macOS 等采用) 中前六个整型或指针参数依次保存在 RDI, RSI, RDX, RCX, R8 和 R9 寄存器中，如果还有更多的参数的话才会保存在栈上。<br>
+内存地址不能大于 0x00007FFFFFFFFFFF，6 个字节长度，否则会抛出异常。</p>
+</blockquote>
 <p>如下图所示：</p>
 <p><img src="/2020/07/18/SoftwareSecurity1/1720265457189.png" alt="" width="500"></p>
 <p>对应的汇编代码：</p>
@@ -276,10 +284,10 @@
 <p>包含两步操作：</p>
 <ol>
 <li class="lvl-3">
-<p>push $eip, 相当于push了return address</p>
+<p>push $eip, $eip存储的是当前下一条指令的地址，可以理解为PC寄存器，相当于push了return address</p>
 </li>
 <li class="lvl-3">
-<p>跳转到func的地址，即标号地址</p>
+<p>jmp xxx，跳转到func的地址，即标号地址</p>
 </li>
 </ol>
 <h4 id="leave指令">leave指令</h4>
@@ -293,7 +301,7 @@
 </li>
 </ol>
 <h4 id="ret指令">ret指令</h4>
-<p>就是pop $eip的操作，结束函数，根据return address返回</p>
+<p>就是pop $eip的操作，把之前存储的上一个函数要执行的指令地址给PC寄存器，结束函数，根据return address返回</p>
 <h2 id="攻击原理">攻击原理</h2>
 <p>通过buffer overflow去overwrite栈上的return address并写入一段恶意代码，通过新的return address跳转到恶意代码起始处去执行恶意代码即可。</p>
 <p><img src="/2020/07/18/SoftwareSecurity1/1720265572567.png" alt="" width="500"></p>
@@ -489,10 +497,10 @@ io<span class="token punctuation">.</span>sendline<span class="token punctuation
 io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="防御手段">防御手段</h2>
 <h3 id="Canary">Canary</h3>
-<p>在ebp下面放一个字作为canary,在程序调用结束之前(leave ret之前), 检查栈上的canary与寄存器中的canary是否相等，若不相等则调用中断程序。</p>
+<p>在ebp和return address中间放一个字作为canary,在程序调用结束之前(leave ret之前), 检查栈上的canary与寄存器中的canary是否相等，若不相等则调用中断程序。</p>
 <p>攻击方式：printf格式化字符串漏洞攻击拉出canary。</p>
 <h3 id="DEP-NX">DEP(NX)</h3>
-<p>指定内存要么为RX(可读可执行)，要么为RW(可读可写)。</p>
+<p>基本原理是将数据所在内存页标识为不可执行。指定内存要么为RX(可读可执行)，要么为RW(可读可写)。栈和bss段只有读写权限。</p>
 <p>攻击方式：Code reuse attack, e.g., ret2libc</p>
 <h3 id="ASLR">ASLR</h3>
 <p>Address Space Layout Randomization(ASLR),地址空间布局随机化,每次程序运行时，其分布不完全固定而是随机的，那么我们无法确定return address，从而难以攻击。ASLR只打乱Stack区和lib，其他的如Heap和Text区并不会被打乱。</p>
@@ -524,6 +532,7 @@ io<span class="token punctuation">.</span>interactive<span class="token punctuat
             appId: "thYvkqNTRLSNl0dGT8PryTEu-gzGzoHsz",
             appKey: "PQ7geFp2HbDoa7iI1WCEFyxj",
             avatar:'identicon', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+            meta: ['nick','mail'],
             placeholder: ' \
             这个世界拥有她，但不了解她\n \
             而我，我了解她\n \
@@ -562,7 +571,7 @@ io<span class="token punctuation">.</span>interactive<span class="token punctuat
 
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
-<div class="post-toc-box"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="post-toc-number">1.</span> <span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9BBuffer-Overflow%E6%94%BB%E5%87%BB"><span class="post-toc-number">2.</span> <span class="post-toc-text">历史上的一些Buffer Overflow攻击</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Morris%E8%A0%95%E8%99%AB"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Morris蠕虫</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Heartbleed%E6%BC%8F%E6%B4%9E"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Heartbleed漏洞</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="post-toc-number">3.</span> <span class="post-toc-text">基础知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">程序内存布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%88%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">栈内存布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Frame-Pointer%E5%B8%A7%E6%8C%87%E9%92%88"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Frame Pointer帧指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Stack-Pointer%E6%A0%88%E6%8C%87%E9%92%88"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">Stack Pointer栈指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">汇编指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#call%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">call指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#leave%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.2.</span> <span class="post-toc-text">leave指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ret%E6%8C%87%E4%BB%A4"><span class="post-toc-number">3.5.3.</span> <span class="post-toc-text">ret指令</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86"><span class="post-toc-number">4.</span> <span class="post-toc-text">攻击原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E7%A4%BA%E4%BE%8B"><span class="post-toc-number">5.</span> <span class="post-toc-text">攻击示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim1"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Victim1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC"><span class="post-toc-number">5.1.3.</span> <span class="post-toc-text">攻击脚本</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim2"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Victim2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81-2"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B-2"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC-2"><span class="post-toc-number">5.2.3.</span> <span class="post-toc-text">攻击脚本</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim3"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Victim3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81-3"><span class="post-toc-number">5.3.1.</span> <span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B-3"><span class="post-toc-number">5.3.2.</span> <span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC-3"><span class="post-toc-number">5.3.3.</span> <span class="post-toc-text">攻击脚本</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%98%B2%E5%BE%A1%E6%89%8B%E6%AE%B5"><span class="post-toc-number">6.</span> <span class="post-toc-text">防御手段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Canary"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Canary</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DEP-NX"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">DEP(NX)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ASLR"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">ASLR</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">7.</span> <span class="post-toc-text">参考资料</span></a></li></ol></div>
+<div class="post-toc-box"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="post-toc-text">概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9BBuffer-Overflow%E6%94%BB%E5%87%BB"><span class="post-toc-text">历史上的一些Buffer Overflow攻击</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Morris%E8%A0%95%E8%99%AB"><span class="post-toc-text">Morris蠕虫</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Heartbleed%E6%BC%8F%E6%B4%9E"><span class="post-toc-text">Heartbleed漏洞</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="post-toc-text">基础知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="post-toc-text">程序内存布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%88%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="post-toc-text">栈内存布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Frame-Pointer%E5%B8%A7%E6%8C%87%E9%92%88"><span class="post-toc-text">Frame Pointer帧指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Stack-Pointer%E6%A0%88%E6%8C%87%E9%92%88"><span class="post-toc-text">Stack Pointer栈指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="post-toc-text">汇编指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#call%E6%8C%87%E4%BB%A4"><span class="post-toc-text">call指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#leave%E6%8C%87%E4%BB%A4"><span class="post-toc-text">leave指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ret%E6%8C%87%E4%BB%A4"><span class="post-toc-text">ret指令</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86"><span class="post-toc-text">攻击原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E7%A4%BA%E4%BE%8B"><span class="post-toc-text">攻击示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim1"><span class="post-toc-text">Victim1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC"><span class="post-toc-text">攻击脚本</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim2"><span class="post-toc-text">Victim2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81-2"><span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B-2"><span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC-2"><span class="post-toc-text">攻击脚本</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Victim3"><span class="post-toc-text">Victim3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81-3"><span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%BF%87%E7%A8%8B-3"><span class="post-toc-text">过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC-3"><span class="post-toc-text">攻击脚本</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%98%B2%E5%BE%A1%E6%89%8B%E6%AE%B5"><span class="post-toc-text">防御手段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Canary"><span class="post-toc-text">Canary</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DEP-NX"><span class="post-toc-text">DEP(NX)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ASLR"><span class="post-toc-text">ASLR</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-text">参考资料</span></a></li></ol></div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
   menu();
@@ -593,7 +602,7 @@ io<span class="token punctuation">.</span>interactive<span class="token punctuat
     
     <script src="/js/materialize.min.js"></script>
     
-    <script src="/js/main.min.js"></script>
+    <script src="/js/main.js"></script>
     
     <script src="/js/prism.js"></script>
      

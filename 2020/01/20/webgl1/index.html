@@ -18,7 +18,7 @@
     
     <link rel="stylesheet" href="/css/materialize.min.css" />
     
-    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
     
     <link rel="stylesheet" href="/css/prism.css" />
      
@@ -81,7 +81,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2024/07/">七月 2024<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/07/">七月 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">二月 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">一月 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">五月 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">八月 1999<span class="archive-count">1</span></a>
+        <a class="archive-link" href="/archives/2024/07/">七月 2024<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/07/">七月 2020<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/02/">二月 2020<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2020/01/">一月 2020<span class="archive-count">3</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2019/05/">五月 2019<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2012/08/">八月 2012<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/1999/08/">八月 1999<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
@@ -94,7 +94,7 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习<span class="category-count">6</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔<span class="category-count">2</span></a>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习<span class="category-count">6</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔<span class="category-count">3</span></a>
     </li>
 </ul>
 <!--tags-->
@@ -454,6 +454,7 @@ gl<span class="token punctuation">.</span><span class="token function">drawArray
             appId: "thYvkqNTRLSNl0dGT8PryTEu-gzGzoHsz",
             appKey: "PQ7geFp2HbDoa7iI1WCEFyxj",
             avatar:'identicon', // (''/mp/identicon/monsterid/wavatar/robohash/retro/hide)
+            meta: ['nick','mail'],
             placeholder: ' \
             这个世界拥有她，但不了解她\n \
             而我，我了解她\n \
@@ -492,7 +493,7 @@ gl<span class="token punctuation">.</span><span class="token function">drawArray
 
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
-<div class="post-toc-box"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%AE%BE%E7%BD%AE%E7%94%BB%E5%B8%83"><span class="post-toc-number">1.</span> <span class="post-toc-text">创建与设置画布</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B0%9D%E8%AF%95%E7%BB%98%E5%88%B6"><span class="post-toc-number">2.</span> <span class="post-toc-text">尝试绘制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9D%80%E8%89%B2%E5%99%A8%E7%9B%B8%E5%85%B3"><span class="post-toc-number">3.</span> <span class="post-toc-text">着色器相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E5%BA%93"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">函数库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%98%E5%82%A8%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">用字符串存储着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%85%E5%B5%8C%E4%BA%8Ehtml%E4%BB%A3%E7%A0%81%E4%B8%AD"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">内嵌于html代码中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">从文件加载着色器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84WebGL%E7%A8%8B%E5%BA%8F"><span class="post-toc-number">4.</span> <span class="post-toc-text">简单的WebGL程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%A1%B6%E7%82%B9%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">顶点着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WebGL%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">WebGL坐标系</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">片元着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B8%85%E7%A9%BA%E7%BB%98%E5%9B%BE%E5%8C%BA"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">清空绘图区</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%BB%E4%B8%80%E4%B8%AA%E7%82%B9"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">画一个点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考资料</span></a></li></ol></div>
+<div class="post-toc-box"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%AE%BE%E7%BD%AE%E7%94%BB%E5%B8%83"><span class="post-toc-text">创建与设置画布</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B0%9D%E8%AF%95%E7%BB%98%E5%88%B6"><span class="post-toc-text">尝试绘制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9D%80%E8%89%B2%E5%99%A8%E7%9B%B8%E5%85%B3"><span class="post-toc-text">着色器相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0%E5%BA%93"><span class="post-toc-text">函数库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-text">着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%98%E5%82%A8%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-text">用字符串存储着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%85%E5%B5%8C%E4%BA%8Ehtml%E4%BB%A3%E7%A0%81%E4%B8%AD"><span class="post-toc-text">内嵌于html代码中</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-text">从文件加载着色器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84WebGL%E7%A8%8B%E5%BA%8F"><span class="post-toc-text">简单的WebGL程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%A1%B6%E7%82%B9%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-text">顶点着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WebGL%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="post-toc-text">WebGL坐标系</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8"><span class="post-toc-text">片元着色器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B8%85%E7%A9%BA%E7%BB%98%E5%9B%BE%E5%8C%BA"><span class="post-toc-text">清空绘图区</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%94%BB%E4%B8%80%E4%B8%AA%E7%82%B9"><span class="post-toc-text">画一个点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="post-toc-text">参考资料</span></a></li></ol></div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
   menu();
@@ -523,7 +524,7 @@ gl<span class="token punctuation">.</span><span class="token function">drawArray
     
     <script src="/js/materialize.min.js"></script>
     
-    <script src="/js/main.min.js"></script>
+    <script src="/js/main.js"></script>
     
     <script src="/js/prism.js"></script>
      
